@@ -14,11 +14,14 @@ var	gulp				= require('gulp'),							// сам таскраннер
 		rigger			= require('gulp-rigger'),					// втыкает файлов в файлы
 		sourcemaps		= require('gulp-sourcemaps'),				// создает карты
 		spritePng		= require('gulp.spritesmith'),			// делает пнг атласы
-		// spriteSvg		= require('gulp-svg-spritesheet'),	// для атласов, еще не разобрался
-		spriteSvg		= require('gulp-svg-sprite'),				// делает свг атласы (кое как) и файл стилей
+		svgspritesheet	= require('gulp-svg-spritesheet'),	// для атласов, еще не разобрался
+		gutil				= require('gulp-util'),
+		newer				= require('gulp-newer'),
+		// spriteSvg		= require('gulp-svg-sprite'),				// делает свг атласы (кое как) и файл стилей
 		stylus			= require('gulp-stylus'),					// компилятор для стайлуса
 		svg2png			= require('gulp-svg2png'),					// для фолбека с свг на пнг
-		uglify			= require('gulp-uglify');					// сжимает джаваскрипт файлы
+		uglify			= require('gulp-uglify'),					// сжимает джаваскрипт файлы
+		handl = require('handlebars');
 
 var path = {												// пути,
 		src: {												// откуда брать
@@ -36,8 +39,8 @@ var path = {												// пути,
 			fonts:		'build/fonts',					// шрифты,
 			jade:			'build',							// хтмл файлы,
 			js:			'build/js',						// джаваскрипт файлы,
-			spritePng:	'src/img/',						// пнг атласы,
-			spriteSvg:	'src/img/svgSprite.svg',	// свг атласы,
+			spritePng:	'build/img/',						// пнг атласы,
+			spriteSvg:	'build/img/',					// свг атласы,
 			style:		'build/css/'					// ксс файлы.
 		},
 																// пути,
@@ -129,46 +132,30 @@ gulp.task('img:min', function() {		// жмем картинки
 		}));
 });
 
-// gulp.task('spriteSvg:build', function() {
-// 	return gulp.src(path.src.spriteSvg)
-// 		.pipe(spriteSvg({
-// 			cssPathSvg: '../img/svgSprite.svg',
-// 			cssPathNoSvg: '../img/noSvgSprite.svg',
-// 			positioning: 'diagonal',
-// 			units: 'em',
-// 			templateSrc: 'src/tpl/svgSprite.tpl',
-// 			templateDest: 'src/style/partials/svgSprite.styl'
-// 		}))
-// 		.pipe(gulp.dest(path.build.spriteSvg));
-// });
-
-gulp.task('svgclean', function() {		// это удаляет старый свг атлас
-	gulp.src('src/img/spriteSvg*.svg')	// берем старый талас
-		.pipe(clean());						// и нахрен его
-});
-
-gulp.task('spriteSvg:build', ['svgclean'], function() {			// собираем свг атласы
-	return gulp.src(path.src.spriteSvg)									// берем свг-шки
-		.pipe(plumber())														// см. таски выше
-		.pipe(spriteSvg({														// собственно, собираем
-			log: 'info',														// выводим инфу
-			mode: {																// настройки
-				css: {															// вставка через ксс
-					render: {													// настройки вставки
-						styl: {													// выдаст стайлус файл
-							dest: '../style/partials/spriteSvg.styl'	// поправка пути для стайлус файла
-						}
-					},
-					sprite: '../img/spriteSvg.svg',						// поправка пути для пути атласа
-					prefix: '%s()',											// это чтоб миксины выдал, а не классы
-					dimensions: '%s'											// это чтоб размеры отдельным миксином не приписывать
-				}
-			}
-		}))
-		.pipe(gulp.dest('src/'))											// кладем атлас по назначению
-		.pipe(reload({															// см таски выше
-			stream: true
-		}));
+gulp.task('spriteSvg:build', function () {
+    gulp.src('src/img/sprite-svg/*.svg')
+        .pipe(plumber(function(error) {
+            gutil.log(gutil.colors.red(error.message));
+            this.emit('end');
+        }))
+        .pipe(svgspritesheet({
+            cssPathNoSvg: '../img/spriteSvg.png',
+            cssPathSvg: '../img/spriteSvg.svg',
+            padding: 1,
+            pixelBase: 16,
+            positioning: 'packed',
+            templateSrc: 'src/tpl/sprite.tpl',
+            templateDest: 'src/style/partials/spriteSvg.styl',
+            units: 'rem'
+        }))
+        .pipe(imagemin({
+            multipass: true,
+            optimizationLevel: 7
+        }))
+        .pipe(gulp.dest(path.build.spriteSvg+"spriteSvg.svg"))
+        .pipe(svg2png())
+        .pipe(gulp.dest(path.build.spriteSvg+"spriteSvg.png"))
+        .pipe(reload({stream: true}));
 });
 
 gulp.task('spritePng:build', function() {					// собираем пнг спрайт
@@ -186,8 +173,8 @@ gulp.task('spritePng:build', function() {					// собираем пнг спр�
 })
 
 gulp.task('img:build', [	// сборка картинок (все вместе)
-	'spriteSvg:build',		// собрать свг атлас
 	'spritePng:build',		// собрать пнг атлас
+	// 'spriteSvg:build',		// собрать свг атлас
 	'img:min'					// пожать картинки
 ]);
 
@@ -237,10 +224,10 @@ gulp.task('server', function() {
 	});
 });
 
-gulp.task('default', ['clean'], function() {
+gulp.task('default', function() {
 	gulp.start(
-		'watch',
-		['build']
+		['build'],
+		'watch'
 	);
 	gulp.start('server');
 });

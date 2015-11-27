@@ -1,0 +1,64 @@
+.header
+	&__strip
+		display block
+		height 24px
+		sprite($strip)
+
+	&__main
+		padding 30px 0 0
+
+.logo
+	position relative
+	padding-left 90px
+	&:before
+		content ''
+		display inline-block
+		sprite($logo)
+		position absolute
+		@extend $left-center
+
+	&__name
+		font-family zopa
+		font-size 58px
+		color dark-gray
+		
+	&__slogan
+		font-size fz-main+1
+		color dark-gray
+
+.h-number
+	font-size fz-head
+	text-align center
+	
+	&__mobile
+	&__city
+		display inline-block
+		color dark-gray
+		margin 0 50px
+	
+	&__mobile
+		position relative
+		padding 10px 0 10px 45px
+		
+		&:before
+			content ''
+			display inline-block
+			
+			position absolute
+			@extend $left-center
+			
+		&--gray
+			color light-gray
+
+.busket
+	&__title
+		font-size fz-head
+		color dark-gray
+		position relative
+		padding-left 45px
+		&:before
+			
+			display inline-block
+			content ''
+			@extend $left-center
+			position absolute
