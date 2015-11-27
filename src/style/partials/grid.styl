@@ -1,0 +1,115 @@
+// количества колонок
+colNumLg = 12
+colNumMd = 8
+colNumSm = 6
+
+// ширины контейнера
+contWLg = 1200px
+contWMd = 800px
+contWSm = 320px
+
+// паддинги контейнера
+contPadLg = 20px
+contPadMd = 20px
+contPadSm = 20px
+
+//  паддинги колонок
+colPadLg = 10px
+colPadMd = 10px
+colPadSm = 10px
+
+// маржины строки
+rowMargLg = -10px
+rowMargMd = -10px
+rowMargSm = -10px
+
+.container
+	position relative
+	margin 0 auto
+	
+.row
+	font-size 0
+	
+[class^="col-"]
+	display inline-block
+	vertical-align top
+
+// это создает солонки
+make-grid(pref, colNum)
+	for num in 1..colNum
+		.col-{pref}-{num}
+			width (num*100%/colNum)
+
+// это создает отступы
+make-offset(pref, colNum)
+	for num in 1..colNum
+		.col-off-{pref}-{num}
+			margin-left (num*100%/colNum)
+
+// мобилка
+@media (max-width (contWMd - 1px))
+
+	body
+		min-width contWSm
+	
+	.container
+		width contWSm
+		padding 0 contPadSm
+	
+	.row
+		margin 0 rowMargSm
+		
+	[class^="col-sm-"]
+		padding 0 colPadSm
+
+	make-grid(sm, colNumSm)
+	
+	.col-sm-0
+		display none
+	
+	make-offset(sm, colNumSm)
+
+// планшет
+@media (min-width contWMd) and (max-width (contWLg - 1))
+
+	body
+		min-width contWMd
+	
+	.container
+		width contWMd
+		padding 0 contPadMd
+	
+	.row
+		margin 0 rowMargMd
+		
+	[class^="col-md-"]
+		padding 0 colPadMd
+
+	make-grid(md, colNumMd)
+	
+	.col-md-0
+		display none
+	
+	make-offset(md, colNumMd)
+
+// десктоп
+@media (min-width contWLg)
+
+	body
+		min-width contWLg
+	
+	.container
+		width contWLg
+		padding 0 contPadLg
+	
+	.row
+		margin 0 rowMargLg
+	[class^="col-lg-"]
+		padding 0 colPadLg
+
+	make-grid(lg, colNumLg)
+	
+	.col-lg-0
+		display none
+	
+	make-offset(lg, colNumLg)
