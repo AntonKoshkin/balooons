@@ -39,7 +39,8 @@ var path = {												// пути,
 			fonts:		'build/fonts',					// шрифты,
 			jade:			'build',							// хтмл файлы,
 			js:			'build/js',						// джаваскрипт файлы,
-			spritePng:	'build/img/',						// пнг атласы,
+			spritePng:	'build/img/',					// пнг атласы,
+			spPngStyl:	'../../src/style/partials/spritePng.styl',
 			spriteSvg:	'build/img/',					// свг атласы,
 			style:		'build/css/'					// ксс файлы.
 		},
@@ -162,8 +163,8 @@ gulp.task('spritePng:build', function() {					// собираем пнг спр�
 	gulp.src(path.src.spritePng)								// берем исходники
 		.pipe(plumber())											//
 		.pipe(spritePng({											// собираем:
-			imgName: 'spritePng.png',							// обзавем атлас
-			cssName: '../style/partials/spritePng.styl',	// обзавем файл стилей
+			imgName: 'spritePng.png',							// обзовем атлас
+			cssName: path.build.spPngStyl,					// обзовем файл стилей
 			imgPath: '../img/spritePng.png'					// сюда положим
 		}))
 		.pipe(gulp.dest(path.build.spritePng))				// кладем атлас по назначению
@@ -226,8 +227,8 @@ gulp.task('server', function() {
 
 gulp.task('default', function() {
 	gulp.start(
-		['build'],
-		'watch'
+		'watch',
+		['build']
 	);
 	gulp.start('server');
 });

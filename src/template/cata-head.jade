@@ -1,23 +1,35 @@
 header.header
 	.container
-		.header__strip
-			.row
-				.col-lg-3
-					p.color-strip__text Доставка и печать на шарах
+		.upper-strip
+			span.upper-strip__text Доставка и печать на шарах
 	.container
-		.header__main
-			.row
-				.col-lg-4
-					.logo
-						p.logo__name Улёт
-						p.logo__slogan Наш девиз - педальку вниз!
-				.col-lg-4
-					.h-number
-						a.h-number__mobile(href="tel:89005553535")
-							span.h-number__mobile--gray +7 (900)
-							| 555-35-35
-						a.h-number__city(href="tel:88005553535") 8 800 555 35 35
-				.col-lg-4
-					.busket.pull-right
-						p.busket__title В корзине
-						a.busket__numbers(href="#") 5 товаров
+		.row
+			.col-lg-4
+				.logo
+					span.logo__title Улёт
+					span.logo__slogan Наш девиз - педальку вниз!
+			.col-lg-4
+				div
+					span.header__phone
+						span.header__phone--gray +7 (900)
+						| 555-35-35
+					span.header__phone 8 800 555 35 35
+			.col-lg-4
+				.basket
+					span.basket__title В корзине
+					a.basket__link(href="#") 5 товаров
+	.container
+		nav.main-menu
+			ul.main-menu__list
+				li.main-menu__item
+					a.main-menu__a(href="#") Каталог
+				li.main-menu__item
+					a.main-menu__a(href="#") Услуги
+				li.main-menu__item
+					a.main-menu__a(href="#") Портфолио
+				li.main-menu__item
+					a.main-menu__a(href="#") Доставка и оплата
+				li.main-menu__item
+					a.main-menu__a(href="#") Оптовым клиентам
+				li.main-menu__item
+					a.main-menu__a(href="#") Оформить заказ

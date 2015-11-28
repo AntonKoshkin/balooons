@@ -432,98 +432,10 @@ p {
 a {
   text-decoration: none;
 }
-.sprite-common,
-.h-number__mobile:before,
-.busket__title:before {
-  background: url("../img/spriteSvg.svg") no-repeat;
-  background-size: 4.5625rem 2.3125rem;
-}
-.no-svg .sprite-common,
-.no-svg .h-number__mobile:before,
-.no-svg .busket__title:before {
-  background: url("../img/spriteSvg.png");
-}
-.header__strip {
-  display: block;
-  height: 24px;
+.upper-strip {
   background-image: url("../img/spritePng.png");
   background-position: 0px 0px;
   width: 1200px;
   height: 24px;
-}
-.header__main {
-  padding: 30px 0 0;
-}
-.logo {
-  position: relative;
-  padding-left: 90px;
-}
-.logo:before {
-  content: '';
-  display: inline-block;
-  background-image: url("../img/spritePng.png");
-  background-position: 0px -24px;
-  width: 80px;
-  height: 118px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-}
-.logo__name {
-  font-family: "ZopaRegular";
-  font-size: 58px;
-  color: #292929;
-}
-.logo__slogan {
-  font-size: 16px;
-  color: #292929;
-}
-.h-number {
-  font-size: 19px;
-  text-align: center;
-}
-.h-number__mobile,
-.h-number__city {
-  display: inline-block;
-  color: #292929;
-  margin: 0 50px;
-}
-.h-number__mobile {
-  position: relative;
-  padding: 10px 0 10px 45px;
-}
-.h-number__mobile:before {
-  content: '';
-  display: inline-block;
-  background-position: -2.3125rem -0.0625rem;
-  width: 2.1875rem;
-  height: 2.1875rem;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-}
-.h-number__mobile--gray {
-  color: #929191;
-}
-.busket__title {
-  font-size: 19px;
-  color: #292929;
-  position: relative;
-  padding-left: 45px;
-}
-.busket__title:before {
-  background-position: -0.0625rem -0.0625rem;
-  width: 2.1875rem;
-  height: 2.1875rem;
-  display: inline-block;
-  content: '';
-  top: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-  position: absolute;
+  height: 24px;
 }
