@@ -23,16 +23,16 @@
 	&__item
 		font-size fz-main+3
 		cursor pointer
-		
-		&:last-child
-			
-			.side-menu__sublist:last-child
-				height auto
 	
 	&__sublist
 		list-style-type disc
-		height 0
 		overflow hidden
+		height 0
+		transition .5s
+		
+		&--active
+			height auto
+			transition .5s
 		
 	&__subtitle
 		display inline-block
