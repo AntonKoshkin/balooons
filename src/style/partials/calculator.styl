@@ -1,5 +1,13 @@
+.gray-box
+	display inline-block
+	width 40px
+	height 20px
+	background #fcf4ee
+	margin 0 10px -4px 0
+
 .calc
-	padding 30px
+	padding 30px 0 100px
+	position relative
 	
 	&__title
 		color red
@@ -7,6 +15,89 @@
 		text-align center
 	
 	&__form
+		padding 20px 40px
 		border 1px solid lighter-gray
 		border-radius 1px
-		margin 0 20px
+		margin 0 20px 10px
+		
+	&__subtitle
+		font-size fz-main
+		margin-bottom 20px
+	
+	&__number
+		display inline-block
+		font-size fz-main
+		padding 3px 7px 5px
+	
+	input[type="radio"]
+		display none
+		
+		&:checked
+			+ .calc__number
+				background #fcf4ee
+
+	&__color
+		
+		height 20px
+		
+		&-square
+			vertical-align bottom
+			display inline-block
+			width 20px
+			height 20px
+			background blue
+			margin-right 10px
+
+		font-size fz-main
+	
+	&__pic-down
+		display none
+	
+	&__pic-label
+		font-size fz-main
+		position relative
+		padding-left 30px
+		color blue
+		cursor pointer
+		
+		&:before
+			@extend $bifaf
+			@extend $left-center
+			width 20px
+			height 20px
+			border-radius 50%
+			background lightest-gray
+	
+	&__col
+		margin-left 50px
+
+	&__price
+		font-size fz-main
+		text-transform uppercase
+		font-weight bold
+	
+	&__we-contact
+		margin-left 50px
+		font-family ptsans
+		font-size fz-little
+		margin-bottom 30px
+	
+	&__make-order
+		padding 5px 36px
+		font-size fz-main+6
+		color white
+		background red
+		border none
+		
+body
+	position relative
+	
+	&:after
+		@extend $bifaf
+		width 100%
+		bottom 0
+		left 0
+		right 0
+		margin auto
+		
+		sprite($bottomstrip)
