@@ -3,9 +3,13 @@ html(lang="ru")
 head
 	meta(charset="UTF-8")
 	title Balooons
-	include template/links.jade
+	include template/links
 body
-	include template/cata-head.jade
-	
+	include template/cata-head
+	main
+		.container
+			.row
+				include template/cata-aside
+				include template/cata-content
 				
 	script(src="js/main.js")

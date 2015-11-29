@@ -3,28 +3,34 @@
 <head>
   <meta charset="UTF-8"/>
   <title>Balooons</title>
-  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/style.min.css"/>
 </head>
 <body>
   <header class="header">
-    <div class="container">
-      <div class="upper-strip"><span class="upper-strip__text">Доставка и печать на шарах</span></div>
+    <div class="container upper-strip">
+      <div class="upper-strip__wrapper"><span class="upper-strip__text">Доставка и печать на шарах</span></div>
     </div>
     <div class="container">
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="logo"><span class="logo__title">Улёт</span><span class="logo__slogan">Наш девиз - педальку вниз!</span></div>
-        </div>
-        <div class="col-lg-4">
-          <div><span class="header__phone"><span class="header__phone--gray">+7 (900)</span>555-35-35</span><span class="header__phone">8 800 555 35 35</span></div>
-        </div>
-        <div class="col-lg-4">
-          <div class="basket"><span class="basket__title">В корзине</span><a href="#" class="basket__link">5 товаров</a></div>
+      <div class="header__main">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="logo">
+              <p class="logo__title">Улёт</p>
+              <p class="logo__slogan">Наш девиз - педальку вниз!</p>
+            </div>
+          </div>
+          <div class="col-lg-4 text-center">
+            <div class="header__phones"><span class="header__phone"><span class="header__phone--gray">+7 (900) </span>555-35-35</span><span class="header__phone">8 800 555 35 35</span></div>
+          </div>
+          <div class="col-lg-4">
+            <div class="basket text-right"><span class="basket__title">В корзине</span><a href="#" class="basket__link">5 товаров</a></div>
+          </div>
         </div>
       </div>
     </div>
     <div class="container">
       <nav class="main-menu">
+        <div class="main-menu__parallelogram"></div>
         <ul class="main-menu__list">
           <li class="main-menu__item"><a href="#" class="main-menu__a">Каталог</a></li>
           <li class="main-menu__item"><a href="#" class="main-menu__a">Услуги</a></li>
@@ -36,5 +42,163 @@
       </nav>
     </div>
   </header>
+  <main>
+    <div class="container">
+      <div class="row">
+        <aside class="col-lg-3">
+          <nav class="side-menu">
+            <h1 class="side-menu__title">Каталог</h1>
+            <ul class="side-menu__list">
+              <li class="side-menu__item">
+                <p class="side-menu__subtitle">Шарики</p>
+                <ul class="side-menu__sublist">
+                  <li class="side-menu__subitem"><a href="#" class="side-menu__link">Далеко-далеко.</a></li>
+                  <li class="side-menu__subitem"><a href="#" class="side-menu__link">Большой!</a></li>
+                  <li class="side-menu__subitem"><a href="#" class="side-menu__link">Ведущими.</a></li>
+                </ul>
+              </li>
+              <li class="side-menu__item">
+                <p class="side-menu__subtitle">Шарики с печатью</p>
+                <ul class="side-menu__sublist">
+                  <li class="side-menu__subitem"><a href="#" class="side-menu__link">Далеко-далеко.</a></li>
+                  <li class="side-menu__subitem"><a href="#" class="side-menu__link">Рукописи.</a></li>
+                  <li class="side-menu__subitem"><a href="#" class="side-menu__link">Но.</a></li>
+                </ul>
+              </li>
+              <li class="side-menu__item">
+                <p class="side-menu__subtitle">Гирлянды</p>
+                <ul class="side-menu__sublist">
+                  <li class="side-menu__subitem"><a href="#" class="side-menu__link">Далеко-далеко.</a></li>
+                  <li class="side-menu__subitem"><a href="#" class="side-menu__link">Путь!</a></li>
+                  <li class="side-menu__subitem"><a href="#" class="side-menu__link">Алфавит.</a></li>
+                </ul>
+              </li>
+              <li class="side-menu__item">
+                <p class="side-menu__subtitle">Фигуры</p>
+                <ul class="side-menu__sublist">
+                  <li class="side-menu__subitem"><a href="#" class="side-menu__link">Далеко-далеко.</a></li>
+                  <li class="side-menu__subitem"><a href="#" class="side-menu__link">Парадигматическая.</a></li>
+                  <li class="side-menu__subitem"><a href="#" class="side-menu__link">Грустный.</a></li>
+                </ul>
+              </li>
+              <li class="side-menu__item">
+                <p class="side-menu__subtitle">Готовое решение</p>
+                <ul class="side-menu__sublist">
+                  <li class="side-menu__subitem"><a href="#" class="side-menu__link side-menu__link--active">День рождения</a></li>
+                  <li class="side-menu__subitem"><a href="#" class="side-menu__link">Свадьба</a></li>
+                  <li class="side-menu__subitem"><a href="#" class="side-menu__link">Корпоратив</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </aside>
+        <div class="col-lg-9">
+          <h2 class="cat__title">День рождения</h2>
+          <div class="banner">
+            <div class="banner__title">День рождения</div>
+            <div class="banner__text">День рождения - отличный повод украсить дом, дачу или ресторан шариками. Выбирайте комплекты со скидками, гирлянды или закажите много одноцветных шаров</div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3">
+              <div class="cat-item">
+                <h3 class="cat-item__title">Шарик красный</h3>
+                <div class="cat-item__img"><img src="img/baloon-red.jpg" alt="baloon"/></div>
+                <p class="cat-item__price">100 руб</p>
+                <form action="" class="cat-item__order">
+                  <input id="item-number" type="text" class="cat-item__number"/>
+                  <label for="item-number" class="cat-item__unit">шт.</label>
+                  <input type="submit" value="В корзину" class="cat-item__to-basket"/>
+                </form>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="cat-item">
+                <h3 class="cat-item__title">Шарик красный</h3>
+                <div class="cat-item__img"><img src="img/baloon-blue.jpg" alt="baloon"/></div>
+                <p class="cat-item__price">100 руб</p>
+                <form action="" class="cat-item__order">
+                  <input id="item-number" type="text" class="cat-item__number"/>
+                  <label for="item-number" class="cat-item__unit">шт.</label>
+                  <input type="submit" value="В корзину" class="cat-item__to-basket"/>
+                </form>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="cat-item">
+                <h3 class="cat-item__title">Шарик красный</h3>
+                <div class="cat-item__img"><img src="img/baloon-purpur.jpg" alt="baloon"/></div>
+                <p class="cat-item__price">100 руб</p>
+                <form action="" class="cat-item__order">
+                  <input id="item-number" type="text" class="cat-item__number"/>
+                  <label for="item-number" class="cat-item__unit">шт.</label>
+                  <input type="submit" value="В корзину" class="cat-item__to-basket"/>
+                </form>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="cat-item">
+                <h3 class="cat-item__title">Шарик красный</h3>
+                <div class="cat-item__img"><img src="img/baloon-cyan.jpg" alt="baloon"/></div>
+                <p class="cat-item__price">100 руб</p>
+                <form action="" class="cat-item__order">
+                  <input id="item-number" type="text" class="cat-item__number"/>
+                  <label for="item-number" class="cat-item__unit">шт.</label>
+                  <input type="submit" value="В корзину" class="cat-item__to-basket"/>
+                </form>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="cat-item">
+                <h3 class="cat-item__title">Шарик красный</h3>
+                <div class="cat-item__img"><img src="img/baloon-red.jpg" alt="baloon"/></div>
+                <p class="cat-item__price">100 руб</p>
+                <form action="" class="cat-item__order">
+                  <input id="item-number" type="text" class="cat-item__number"/>
+                  <label for="item-number" class="cat-item__unit">шт.</label>
+                  <input type="submit" value="В корзину" class="cat-item__to-basket"/>
+                </form>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="cat-item">
+                <h3 class="cat-item__title">Шарик красный</h3>
+                <div class="cat-item__img"><img src="img/baloon-blue.jpg" alt="baloon"/></div>
+                <p class="cat-item__price">100 руб</p>
+                <form action="" class="cat-item__order">
+                  <input id="item-number" type="text" class="cat-item__number"/>
+                  <label for="item-number" class="cat-item__unit">шт.</label>
+                  <input type="submit" value="В корзину" class="cat-item__to-basket"/>
+                </form>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="cat-item">
+                <h3 class="cat-item__title">Шарик красный</h3>
+                <div class="cat-item__img"><img src="img/baloon-purpur.jpg" alt="baloon"/></div>
+                <p class="cat-item__price">100 руб</p>
+                <form action="" class="cat-item__order">
+                  <input id="item-number" type="text" class="cat-item__number"/>
+                  <label for="item-number" class="cat-item__unit">шт.</label>
+                  <input type="submit" value="В корзину" class="cat-item__to-basket"/>
+                </form>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="cat-item">
+                <h3 class="cat-item__title">Шарик красный</h3>
+                <div class="cat-item__img"><img src="img/baloon-cyan.jpg" alt="baloon"/></div>
+                <p class="cat-item__price">100 руб</p>
+                <form action="" class="cat-item__order">
+                  <input id="item-number" type="text" class="cat-item__number"/>
+                  <label for="item-number" class="cat-item__unit">шт.</label>
+                  <input type="submit" value="В корзину" class="cat-item__to-basket"/>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
   <script src="js/main.js"></script>
 </body>

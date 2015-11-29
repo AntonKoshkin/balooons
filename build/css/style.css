@@ -176,15 +176,44 @@ td {
   padding: 0;
 }
 @font-face {
-  font-family: "ZopaRegular";
+  font-family: 'ZopaRegular';
   src: url("../fonts/ZopaRegular.eot");
-  src: url("../fonts/ZopaRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/ZopaRegular.woff") format("woff"), url("../fonts/ZopaRegular/ZopaRegular.ttf") format("truetype");
+  src: url("../fonts/zopa/ZopaRegular.eot?#iefix") format('embedded-opentype'), url("../fonts/zopa/ZopaRegular.woff") format('woff'), url("../fonts/zopa/ZopaRegular/ZopaRegular.ttf") format('truetype');
   font-style: normal;
   font-weight: normal;
+}
+@font-face {
+  font-family: 'lora';
+  src: url("../fonts/lora/lora-bold-webfont.eot");
+  src: url("../fonts/lora/lora-bold-webfont.eot?#iefix") format('embedded-opentype'), url("../fonts/lora/lora-bold-webfont.woff2") format('woff2'), url("../fonts/lora/lora-bold-webfont.woff") format('woff'), url("../fonts/lora/lora-bold-webfont.ttf") format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'lora';
+  src: url("../fonts/lora/lora-bolditalic-webfont.eot");
+  src: url("../fonts/lora/lora-bolditalic-webfont.eot?#iefix") format('embedded-opentype'), url("../fonts/lora/lora-bolditalic-webfont.woff2") format('woff2'), url("../fonts/lora/lora-bolditalic-webfont.woff") format('woff'), url("../fonts/lora/lora-bolditalic-webfont.ttf") format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'lora';
+  src: url("../fonts/lora/lora-italic-webfont.eot");
+  src: url("../fonts/lora/lora-italic-webfont.eot?#iefix") format('embedded-opentype'), url("../fonts/lora/lora-italic-webfont.woff2") format('woff2'), url("../fonts/lora/lora-italic-webfont.woff") format('woff'), url("../fonts/lora/lora-italic-webfont.ttf") format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'lora';
+  src: url("../fonts/lora/lora-regular-webfont.eot");
+  src: url("../fonts/lora/lora-regular-webfont.eot?#iefix") format('embedded-opentype'), url("../fonts/lora/lora-regular-webfont.woff2") format('woff2'), url("../fonts/lora/lora-regular-webfont.woff") format('woff'), url("../fonts/lora/lora-regular-webfont.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 .container {
   position: relative;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 .row {
   font-size: 0;
@@ -404,6 +433,27 @@ td {
     margin-left: 100%;
   }
 }
+.logo:before,
+.header__phone:first-child:before,
+.basket__title:before {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+.logo:before,
+.header__phone:first-child:before,
+.basket__title:before,
+.side-menu__title:after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+}
+.cat-item:after {
+  content: '';
+  display: block;
+  clear: both;
+}
 .pull-left {
   float: left;
 }
@@ -419,23 +469,244 @@ td {
 .text-right {
   text-align: right;
 }
-* {
-  box-sizing: inherit;
-}
 body {
   box-sizing: content-box;
-  font-family: serif;
+  font-family: lora, serif;
+  color: #292929;
+}
+* {
+  box-sizing: inherit;
 }
 p {
   margin: 0;
 }
 a {
+  display: inline-block;
   text-decoration: none;
+  color: #000;
+}
+ul {
+  padding: 0;
+  margin: 0;
+}
+h1,
+h2,
+h3 {
+  margin: 0;
 }
 .upper-strip {
   background-image: url("../img/spritePng.png");
   background-position: 0px 0px;
   width: 1200px;
   height: 24px;
-  height: 24px;
+}
+.upper-strip__wrapper {
+  padding: 2px 0 5px;
+}
+.upper-strip__text {
+  color: #fff;
+  font-size: 16px;
+}
+.logo {
+  position: relative;
+  padding-left: 85px;
+}
+.logo:before {
+  background-image: url("../img/spritePng.png");
+  background-position: 0px -24px;
+  width: 80px;
+  height: 118px;
+}
+.logo__title {
+  font-family: 'ZopaRegular', sans-serif;
+  font-size: 58px;
+}
+.logo__slogan {
+  font-size: 16px;
+}
+.header__main {
+  padding: 35px 0;
+}
+.header__phones {
+  padding-top: 15px;
+  text-align: center;
+  display: inline-block;
+}
+.header__phone {
+  display: inline-block;
+  font-size: 19px;
+  margin: 0 50px;
+}
+.header__phone--gray {
+  color: #929191;
+}
+.header__phone:first-child {
+  padding: 5px 0;
+  position: relative;
+}
+.header__phone:first-child:before {
+  background-image: url("../img/spritePng.png");
+  background-position: -115px -24px;
+  width: 35px;
+  height: 35px;
+  left: -40px;
+}
+.basket {
+  padding: 15px 0 0;
+  font-size: 19px;
+  margin: 0 100px 0 150px;
+}
+.basket__title {
+  position: relative;
+  padding: 5px 0;
+}
+.basket__title:before {
+  background-image: url("../img/spritePng.png");
+  background-position: -80px -24px;
+  width: 35px;
+  height: 35px;
+  left: -40px;
+}
+.basket__link {
+  color: #0a75ad;
+  text-decoration: underline;
+}
+.main-menu {
+  position: relative;
+  font-size: 16px;
+}
+.main-menu__parallelogram {
+  z-index: -1;
+  width: 100%;
+  height: 36px;
+  position: absolute;
+  background: #ffd02e;
+  -webkit-transform: skew(-30deg);
+      -ms-transform: skew(-30deg);
+          transform: skew(-30deg);
+}
+.main-menu__list {
+  width: 100%;
+}
+.main-menu__item {
+  display: inline-block;
+  text-align: center;
+}
+.main-menu__a {
+  display: inline-block;
+  padding: 8px 49.166666666666664px;
+}
+.side-menu {
+  padding: 40px 0;
+  margin-right: 40px;
+}
+.side-menu__title {
+  color: #ff5548;
+  font-weight: bold;
+  font-size: 21px;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+.side-menu__title:after {
+  width: 100%;
+  height: 1px;
+  bottom: -3px;
+  left: -2px;
+  background: #ff5548;
+}
+.side-menu__list {
+  list-style-type: none;
+}
+.side-menu__item {
+  font-size: 18px;
+  cursor: pointer;
+}
+.side-menu__item:last-child .side-menu__sublist:last-child {
+  height: auto;
+}
+.side-menu__sublist {
+  list-style-type: disc;
+  height: 0;
+  overflow: hidden;
+}
+.side-menu__subtitle {
+  display: inline-block;
+  padding: 14px 0 14px 5px;
+  border-bottom: 1px dashed #b1b1b1;
+  width: 100%;
+}
+.side-menu__subitem {
+  margin-left: 40px;
+}
+.side-menu__link {
+  display: inline-block;
+  padding: 14px 0;
+}
+.side-menu__link--active {
+  color: #0a75ad;
+  text-decoration: underline;
+}
+.banner {
+  color: #fff;
+  background: url("../img/cata-birthday-banner.jpg") no-repeat;
+  background-size: cover;
+  text-align: center;
+  padding: 60px 100px;
+  margin-bottom: 25px;
+}
+.banner__title {
+  font-family: 'ZopaRegular', sans-serif;
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+.banner__text {
+  font-size: 21px;
+  margin-bottom: 20px;
+}
+.cat__title {
+  margin: 45px 0 35px;
+  color: #ff5548;
+  font-size: 18px;
+  font-weight: bold;
+}
+.cat-item {
+  border: 1px solid #c9c9c9;
+  border-radius: 1px;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+.cat-item__title {
+  font-size: 15px;
+  text-align: left;
+}
+.cat-item__img {
+  min-height: 180px;
+  overflow: hidden;
+}
+.cat-item__price {
+  font-size: 18px;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.cat-item__number {
+  font-size: 18px;
+  width: 30px;
+  padding: 2px 5px;
+  text-align: center;
+  float: left;
+}
+.cat-item__unit {
+  font-size: 18px;
+  float: left;
+  margin-left: 5px;
+}
+.cat-item__to-basket {
+  background: #ff5548;
+  color: #fff;
+  font-size: 15px;
+  border: none;
+  padding: 3px 10px 6px;
+  float: right;
 }

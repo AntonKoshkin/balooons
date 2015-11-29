@@ -1,25 +1,27 @@
 header.header
-	.container
-		.upper-strip
+	.container.upper-strip
+		.upper-strip__wrapper
 			span.upper-strip__text Доставка и печать на шарах
 	.container
-		.row
-			.col-lg-4
-				.logo
-					span.logo__title Улёт
-					span.logo__slogan Наш девиз - педальку вниз!
-			.col-lg-4
-				div
-					span.header__phone
-						span.header__phone--gray +7 (900)
-						| 555-35-35
-					span.header__phone 8 800 555 35 35
-			.col-lg-4
-				.basket
-					span.basket__title В корзине
-					a.basket__link(href="#") 5 товаров
+		.header__main
+			.row
+				.col-lg-4
+					.logo
+						p.logo__title Улёт
+						p.logo__slogan Наш девиз - педальку вниз!
+				.col-lg-4.text-center
+					div.header__phones
+						span.header__phone
+							span.header__phone--gray +7 (900) 
+							| 555-35-35
+						span.header__phone 8 800 555 35 35
+				.col-lg-4
+					.basket.text-right
+						span.basket__title В корзине
+						a.basket__link(href="#") 5 товаров
 	.container
 		nav.main-menu
+			.main-menu__parallelogram
 			ul.main-menu__list
 				li.main-menu__item
 					a.main-menu__a(href="#") Каталог

@@ -14,19 +14,19 @@ var	gulp				= require('gulp'),							// сам таскраннер
 		rigger			= require('gulp-rigger'),					// втыкает файлов в файлы
 		sourcemaps		= require('gulp-sourcemaps'),				// создает карты
 		spritePng		= require('gulp.spritesmith'),			// делает пнг атласы
-		svgspritesheet	= require('gulp-svg-spritesheet'),	// для атласов, еще не разобрался
+		svgspritesheet	= require('gulp-svg-spritesheet'),		// для атласов, еще не разобрался
 		gutil				= require('gulp-util'),
 		newer				= require('gulp-newer'),
-		// spriteSvg		= require('gulp-svg-sprite'),				// делает свг атласы (кое как) и файл стилей
+		// spriteSvg		= require('gulp-svg-sprite'),			// делает свг атласы (кое как) и файл стилей
 		stylus			= require('gulp-stylus'),					// компилятор для стайлуса
 		svg2png			= require('gulp-svg2png'),					// для фолбека с свг на пнг
 		uglify			= require('gulp-uglify'),					// сжимает джаваскрипт файлы
-		handl = require('handlebars');
+		handl				= require('handlebars');
 
 var path = {												// пути,
 		src: {												// откуда брать
 			img:			'src/img/*.*',					// картинки,
-			fonts:		'src/fonts/*.*',				// шрифты,
+			fonts:		'src/fonts/**/*.*',			// шрифты,
 			jade:			'src/*.jade',					// джейд файлы,
 			js:			'src/js/main.js',				// джаваскрипт файлы,
 			spritePng:	'src/img/sprite-png/*.png',// пнг-шки для пнг атласов,
@@ -36,7 +36,7 @@ var path = {												// пути,
 																// пути,
 		build: {												// куда класть
 			img:			'build/img',					// картинки,
-			fonts:		'build/fonts',					// шрифты,
+			fonts:		'build/fonts/',					// шрифты,
 			jade:			'build',							// хтмл файлы,
 			js:			'build/js',						// джаваскрипт файлы,
 			spritePng:	'build/img/',					// пнг атласы,
@@ -47,7 +47,7 @@ var path = {												// пути,
 																// пути,
 		watch: {												// где следить за
 			img:			'src/img/**/*.*',				// картинками,
-			fonts:		'src/fonts/*.*',				// шрифтами,
+			fonts:		'src/fonts/**/*.*',			// шрифтами,
 			jade:			'src/**/*.jade',				// джейд файлами,
 			js:			'src/js/**/*.js',				// джаваскрипт файлами,
 			spritePng:	'src/img/sprite-png/*.png',// исходниками пнг атласов,
