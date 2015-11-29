@@ -1,0 +1,26 @@
+.calc
+	h2.calc__title Заказать шарики
+	form.calc__form(action="" method="post")
+		.row
+			.col-lg-3
+				h3.calc__subtitle Количество
+				input(type="radio" id="number10")
+				label(for="number10") 10
+				input(type="radio" id="number20")
+				label(for="number20") 20
+				input(type="radio" id="number50")
+				label(for="number50") 50
+				input(type="radio" id="number100")
+				label(for="number100") 100
+			.col-lg-3
+				h3.calc__subtitle Цвет
+				select#color(name="color-select")
+					option(value="Небесно синий")
+					option(value="Адово красный")
+					option(value="Бездново черный")
+			.col-lg-3
+				h3.calc__subtitle Изображение
+				input(type="file" name="photoload" accept="image/*" value="Загрузить картинку")
+			.col-lg-3
+				h3.calc__subtitle Стоимость
+				p.calc__price

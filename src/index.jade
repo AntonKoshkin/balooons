@@ -5,11 +5,18 @@ head
 	title Balooons
 	include template/links
 body
-	include template/cata-head
-	main
-		.container
-			.row
-				include template/cata-aside
-				include template/cata-content
+	.wrapper
+		include template/cata-head
+		main
+			.container
+				.row
+					aside.col-lg-3
+						include template/cata-aside
+					section.col-lg-9
+						include template/cata-content
+					.col-lg-12
+						.dashed-border
+			section.container
+				include template/calculator
 				
 	script(src="js/main.js")
