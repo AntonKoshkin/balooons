@@ -1,4 +1,6 @@
 -var id = 'Каталог'
+include template/cata-item
+include template/cat-gal-item
 
 <!DOCTYPE html>
 html(lang="ru")
@@ -12,9 +14,9 @@ body
 		main
 			.container.dashed-border
 				.row
-					aside.col-lg-3
+					aside.col-lg-3.col-md-3.col-sm-0
 						include template/cata-aside
-					section.col-lg-9
+					section.col-lg-9.col-md-9.col-sm-6
 						include template/cata-content
 			footer.container
 				include template/calculator

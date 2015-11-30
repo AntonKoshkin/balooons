@@ -3,8 +3,16 @@
 	background url(../img/cata-birthday-banner.jpg) no-repeat
 	background-size cover
 	text-align center
-	padding 60px 100px
 	margin-bottom 25px
+	
+	@media (min-width contWLg)
+		padding 60px 100px
+		
+	@media (min-width contWMd) and (max-width (contWLg - 1))
+		padding 25px 50px
+	
+	@media (max-width (contWMd - 1px))
+		display none
 	
 	&__title
 		font-family zopa
@@ -67,3 +75,9 @@
 
 .dashed-border
 	border-bottom 1px dashed lightest-gray
+	
+	
+
+// @media (max-width (contWMd - 1px))
+// @media (min-width contWMd) and (max-width (contWLg - 1))
+// @media (min-width contWLg)

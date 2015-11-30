@@ -842,7 +842,11 @@ body {
 }
 .side-menu {
   padding: 40px 0;
-  margin-right: 40px;
+}
+@media (min-width: 1200px) {
+  .side-menu {
+    margin-right: 40px;
+  }
 }
 .side-menu__title {
   color: #ff5548;
@@ -900,8 +904,22 @@ body {
   background: url("../img/cata-birthday-banner.jpg") no-repeat;
   background-size: cover;
   text-align: center;
-  padding: 60px 100px;
   margin-bottom: 25px;
+}
+@media (min-width: 1200px) {
+  .banner {
+    padding: 60px 100px;
+  }
+}
+@media (min-width: 900px) and (max-width: 1199px) {
+  .banner {
+    padding: 25px 50px;
+  }
+}
+@media (max-width: 899px) {
+  .banner {
+    display: none;
+  }
 }
 .banner__title {
   font-family: 'ZopaRegular', sans-serif;

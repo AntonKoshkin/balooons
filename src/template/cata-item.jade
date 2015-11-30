@@ -1,0 +1,17 @@
+-var baloonRed = "img/baloon-red.jpg"
+-var baloonBlue = "img/baloon-blue.jpg"
+-var baloonCyan = "img/baloon-cyan.jpg"
+-var baloonPurpur = "img/baloon-purpur.jpg"
+
+
+mixin catalog-item(color)
+	.col-lg-3.col-md-4.col-sm-3
+		.cat-item
+			h3.cat-item__title Шарик красный
+			.cat-item__img
+				img(src="#{color}", alt="baloon")
+			p.cat-item__price 100 руб
+			form.cat-item__order(action="")
+				input.cat-item__number#item-number(type="text" placeholder="2")
+				label.cat-item__unit(for="item-number") шт.
+				input.cat-item__to-basket(type="submit" value="В корзину")

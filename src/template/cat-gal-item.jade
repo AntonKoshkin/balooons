@@ -1,0 +1,9 @@
+-var item1 = "img/gal-img-1.jpg"
+-var item2 = "img/gal-img-2.jpg"
+-var item3 = "img/gal-img-3.jpg"
+-var item4 = "img/gal-img-4.jpg"
+
+mixin gal-item(number)
+	.col-lg-3.col-md-3.col-sm-1.text-center
+		a.cat-gal__link(href="#")
+			img.cat-gal__img(src="#{number}", alt="gallery item")
