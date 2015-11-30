@@ -9217,3 +9217,12 @@ jQuery(document).ready(function($) {
 		$(this).find('.side-menu__sublist').addClass('side-menu__sublist--active');
 	});
 });
+
+jQuery(document).ready(function($) {
+	$('.main-menu__burger').on('click', function(event) {
+		event.preventDefault();
+		/* Act on the event */
+		$('.main-menu__burger-strip').toggleClass('main-menu__burger-strip--open');
+		$('.main-menu').toggleClass('main-menu--open');
+	});
+});

@@ -1,17 +1,17 @@
 // количества колонок
 colNumLg = 12
-colNumMd = 8
+colNumMd = 12
 colNumSm = 6
 
 // ширины контейнера
 contWLg = 1200px
-contWMd = 800px
-contWSm = 320px
+contWMd = 900px
+contWSm = 538px
 
 // паддинги контейнера
 contPadLg = 40px
-contPadMd = 20px
-contPadSm = 20px
+contPadMd = 40px
+contPadSm = 40px
 
 //  паддинги колонок
 colPadLg = 10px
@@ -22,6 +22,13 @@ colPadSm = 10px
 rowMargLg = -10px
 rowMargMd = -10px
 rowMargSm = -10px
+
+$col-sm
+	padding 0 colPadSm
+$col-md
+	padding 0 colPadMd
+$col-lg
+	padding 0 colPadLg
 
 .container
 	position relative
@@ -39,6 +46,7 @@ make-grid(pref, colNum)
 	for num in 1..colNum
 		.col-{pref}-{num}
 			width (num*100%/colNum)
+			@extend $col-{pref}
 
 // это создает отступы
 make-offset(pref, colNum)
@@ -104,6 +112,7 @@ make-offset(pref, colNum)
 	
 	.row
 		margin 0 rowMargLg
+	
 	[class^="col-lg-"]
 		padding 0 colPadLg
 

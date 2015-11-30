@@ -1,12 +1,13 @@
 -var menu = {'Каталог': '#', 'Услуги': '#', 'Портфолио': '#', 'Доставка и оплата': '#', 'Оптовым клиентам': '#', 'Оформить заказ': '#'}
 
 nav.main-menu
-	.main-menu__parallelogram
+	.main-menu__burger
+		span.main-menu__burger-strip
 	ul.main-menu__list
 		each val, key in menu
 			if id === key
 				li.main-menu__item
-					a.main-menu__a.main-menu--active(href="#{val}") #{key}
+					a.main-menu__a.main-menu__a--active(href="#{val}") #{key}
 			else
 				li.main-menu__item
 					a.main-menu__a(href="#{val}") #{key}
