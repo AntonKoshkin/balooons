@@ -678,7 +678,7 @@ body {
 @media (min-width: 900px) {
   .header__phone:first-child:before {
     background-image: url("../img/spritePng.png");
-    background-position: -80px -35px;
+    background-position: -137px 0px;
     width: 35px;
     height: 35px;
     left: -40px;
@@ -695,7 +695,7 @@ body {
   }
   .basket__title:before {
     background-image: url("../img/spritePng.png");
-    background-position: -80px 0px;
+    background-position: -80px -56px;
     width: 35px;
     height: 35px;
     left: -40px;
@@ -709,6 +709,32 @@ body {
 @media (min-width: 900px) and (max-width: 1199px) {
   .basket {
     margin: 0 50px;
+  }
+}
+@media (max-width: 899px) {
+  .basket__link {
+    background-image: url("../img/spritePng.png");
+    background-position: -80px 0px;
+    width: 57px;
+    height: 56px;
+    position: relative;
+    margin-right: 50px;
+  }
+  .basket__link:after {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    content: '5';
+    background: #292929;
+    border-radius: 50%;
+    position: absolute;
+    right: -8px;
+    bottom: -8px;
+    padding: 4px;
+    text-align: center;
+    color: #fff;
+    font-size: 21px;
+    box-sizing: border-box;
   }
 }
 .basket__link {

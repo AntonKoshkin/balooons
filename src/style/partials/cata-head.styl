@@ -103,6 +103,28 @@
 	@media (min-width contWMd) and (max-width (contWLg - 1))
 		margin 0 50px
 	
+	@media (max-width (contWMd - 1px))
+		&__link
+			sprite($busket)
+			position relative
+			margin-right 50px
+			
+			&:after
+				display inline-block
+				width 30px
+				height 30px
+				content '5'
+				background dark-gray
+				border-radius 50%
+				position absolute
+				right -8px
+				bottom -8px
+				padding 4px
+				text-align center
+				color #fff
+				font-size fz-main+6
+				box-sizing border-box
+				
 	&__link
 		color blue
 		text-decoration underline
