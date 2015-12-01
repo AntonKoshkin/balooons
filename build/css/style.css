@@ -586,6 +586,11 @@ body {
     width: 538px;
   }
 }
+@media (min-width: 1200px) {
+  .dashed-border {
+    border-bottom: 1px dashed #c9c9c9;
+  }
+}
 .upper-strip {
   background: url("../img/colorstrip.png") 0 100% no-repeat;
   height: 24px;
@@ -930,6 +935,11 @@ body {
   font-size: 21px;
   margin-bottom: 20px;
 }
+@media (min-width: 900px) and (max-width: 1199px) {
+  .cat {
+    border-bottom: 1px dashed #c9c9c9;
+  }
+}
 .cat__title {
   margin: 45px 0 35px;
   color: #ff5548;
@@ -976,20 +986,32 @@ body {
   float: right;
   font-size: 15px;
 }
-.dashed-border {
-  border-bottom: 1px dashed #c9c9c9;
-}
 .cat-gal {
   padding: 20px 0;
 }
+@media (min-width: 900px) {
+  .cat-gal {
+    border-top: 1px dashed #c9c9c9;
+  }
+}
 .cat-gal__title {
   font-size: 18px;
-  display: inline-block;
-  margin: 0 35px 15px 0;
+}
+@media (min-width: 900px) {
+  .cat-gal__title {
+    margin: 0 35px 15px 0;
+    display: inline-block;
+  }
 }
 .cat-gal__title--light {
   color: #292e32;
   font-size: 16px;
+}
+@media (max-width: 899px) {
+  .cat-gal__title--light {
+    margin-bottom: 10px;
+    display: inline-block;
+  }
 }
 .cat-gal__img {
   width: 100%;
@@ -1005,20 +1027,54 @@ body {
   padding: 30px 0 100px;
   position: relative;
 }
+@media (min-width: 900px) and (max-width: 1199px) {
+  .calc {
+    padding: 30px 0 75px;
+  }
+}
+@media (max-width: 899px) {
+  .calc {
+    padding: 30px 0 75px;
+  }
+}
 .calc__title {
   color: #ff5548;
   font-size: 21px;
   text-align: center;
+  margin-bottom: 20px;
 }
-.calc__form {
-  padding: 20px 40px;
-  border: 1px solid #b1b1b1;
-  border-radius: 1px;
-  margin: 0 20px 10px;
+@media (max-width: 899px) {
+  .calc__title {
+    background: #e8e8e8;
+    text-align: left;
+    padding: 10px;
+  }
+}
+@media (min-width: 900px) {
+  .calc__form {
+    padding: 20px 40px;
+    border: 1px solid #b1b1b1;
+    border-radius: 1px;
+  }
+}
+@media (min-width: 1200px) {
+  .calc__form {
+    margin: 0 20px 10px;
+  }
+}
+@media (min-width: 900px) and (max-width: 1199px) {
+  .calc__form {
+    margin: 0 0 10px;
+  }
 }
 .calc__subtitle {
   font-size: 15px;
   margin-bottom: 20px;
+}
+@media (max-width: 899px) {
+  .calc__subtitle {
+    margin-bottom: 10px;
+  }
 }
 .calc__number {
   display: inline-block;
@@ -1059,8 +1115,10 @@ body {
   border-radius: 50%;
   background: #c9c9c9;
 }
-.calc__col {
-  margin-left: 50px;
+@media (min-width: 1200px) {
+  .calc__count {
+    margin-left: 50px;
+  }
 }
 .calc__price {
   font-size: 15px;
@@ -1068,10 +1126,25 @@ body {
   font-weight: bold;
 }
 .calc__we-contact {
-  margin-left: 50px;
   font-family: 'pt_sans', serif;
   font-size: 11px;
-  margin-bottom: 30px;
+}
+@media (min-width: 1200px) {
+  .calc__we-contact {
+    margin: 0 0 30px 50px;
+  }
+}
+@media (min-width: 900px) and (max-width: 1199px) {
+  .calc__we-contact {
+    margin: 0 0 30px;
+  }
+}
+@media (max-width: 899px) {
+  .calc__we-contact {
+    font-size: 19px;
+    max-width: 350px;
+    margin-bottom: 50px;
+  }
 }
 .calc__make-order {
   padding: 5px 36px;
@@ -1079,6 +1152,27 @@ body {
   color: #fff;
   background: #ff5548;
   border: none;
+}
+@media (min-width: 900px) {
+  .calc__button {
+    text-align: center;
+  }
+}
+@media (min-width: 900px) and (max-width: 1199px) {
+  .calc__num,
+  .calc__colors,
+  .calc__pic,
+  .calc__count {
+    margin-bottom: 35px;
+  }
+}
+@media (max-width: 899px) {
+  .calc__num,
+  .calc__colors,
+  .calc__pic,
+  .calc__count {
+    margin-bottom: 30px;
+  }
 }
 footer {
   position: relative;
@@ -1092,4 +1186,9 @@ footer:after {
   height: 72px;
   background: url("../img/colorstrip.png") 0 0 no-repeat;
   background-size: cover;
+}
+@media (max-width: 899px) {
+  footer:after {
+    height: 40px;
+  }
 }

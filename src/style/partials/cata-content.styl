@@ -24,6 +24,9 @@
 		margin-bottom 20px
 
 .cat
+	@media (min-width contWMd) and (max-width (contWLg - 1))
+		dashed-border(bottom)
+
 	&__title
 		margin 45px 0 35px
 		color red
@@ -72,12 +75,3 @@
 			padding 3px 10px 6px
 			float right
 			font-size fz-main
-
-.dashed-border
-	border-bottom 1px dashed lightest-gray
-	
-	
-
-// @media (max-width (contWMd - 1px))
-// @media (min-width contWMd) and (max-width (contWLg - 1))
-// @media (min-width contWLg)

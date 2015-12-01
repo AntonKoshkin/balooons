@@ -9,20 +9,46 @@
 	padding 30px 0 100px
 	position relative
 	
+	@media (min-width contWMd) and (max-width (contWLg - 1))
+		padding 30px 0 75px
+	
+	@media (max-width (contWMd - 1px))
+		padding 30px 0 75px
+	
 	&__title
 		color red
 		font-size fz-main+6
 		text-align center
+		margin-bottom 20px
+		
+		@media (max-width (contWMd - 1px))
+			background lighterest-gray
+			text-align left
+			padding 10px
+			
 	
 	&__form
-		padding 20px 40px
-		border 1px solid lighter-gray
-		border-radius 1px
-		margin 0 20px 10px
+		
+		// 
+			
+
+		@media (min-width contWMd)
+			padding 20px 40px
+			border 1px solid lighter-gray
+			border-radius 1px
+		
+		@media (min-width contWLg)
+			margin 0 20px 10px
+		
+		@media (min-width contWMd) and (max-width (contWLg - 1))
+			margin 0 0 10px
 		
 	&__subtitle
 		font-size fz-main
 		margin-bottom 20px
+		
+		@media (max-width (contWMd - 1px))
+			margin-bottom 10px
 	
 	&__number
 		display inline-block
@@ -68,8 +94,9 @@
 			border-radius 50%
 			background lightest-gray
 	
-	&__col
-		margin-left 50px
+	&__count
+		@media (min-width contWLg)
+			margin-left 50px
 
 	&__price
 		font-size fz-main
@@ -77,10 +104,19 @@
 		font-weight bold
 	
 	&__we-contact
-		margin-left 50px
 		font-family ptsans
 		font-size fz-little
-		margin-bottom 30px
+		
+		@media (min-width contWLg)
+			margin 0 0 30px 50px
+		
+		@media (min-width contWMd) and (max-width (contWLg - 1))
+			margin 0 0 30px
+		
+		@media (max-width (contWMd - 1px))
+			font-size fz-head
+			max-width 350px
+			margin-bottom 50px
 	
 	&__make-order
 		padding 5px 36px
@@ -88,6 +124,21 @@
 		color white
 		background red
 		border none
+	
+	&__button
+		@media (min-width contWMd)
+			text-align center
+	
+	&__num
+	&__colors
+	&__pic
+	&__count
+		
+		@media (min-width contWMd) and (max-width (contWLg - 1))
+			margin-bottom 35px
+		
+		@media (max-width (contWMd - 1px))
+			margin-bottom 30px
 		
 footer
 	position relative
@@ -102,3 +153,12 @@ footer
 		height 72px
 		background url(../img/colorstrip.png) 0 0 no-repeat
 		background-size cover
+		
+		@media (max-width (contWMd - 1px))
+			height 40px
+	
+		
+
+// @media (max-width (contWMd - 1px))
+// @media (min-width contWMd) and (max-width (contWLg - 1))
+// @media (min-width contWLg)

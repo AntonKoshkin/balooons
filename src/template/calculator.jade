@@ -1,38 +1,43 @@
 .calc
-	h2.calc__title Заказать шарики
-	form.calc__form(action="" method="post" name="baloonOrder")
-		.row
-			.col-lg-3
-				h3.calc__subtitle Количество
-				.gray-box
-				input#number10(type="radio" name="calcNumber")
-				label.calc__number(for="number10") 10
-				input#number20(type="radio" name="calcNumber")
-				label.calc__number(for="number20") 20
-				input#number50(type="radio" name="calcNumber")
-				label.calc__number(for="number50") 50
-				input#number100(type="radio" name="calcNumber")
-				label.calc__number(for="number100") 100
+	.row
+		.col-lg-12.col-md-9.col-off-md-3
+			h2.calc__title Заказать шарики
+			form.calc__form(action="" method="post" name="baloonOrder")
+				.row
+					.col-lg-3.col-md-5.col-off-md-1.col-sm-6
+						.calc__num
+							h3.calc__subtitle Количество
+							.gray-box
+							input#number10(type="radio" name="calcNumber")
+							label.calc__number(for="number10") 10
+							input#number20(type="radio" name="calcNumber")
+							label.calc__number(for="number20") 20
+							input#number50(type="radio" name="calcNumber")
+							label.calc__number(for="number50") 50
+							input#number100(type="radio" name="calcNumber")
+							label.calc__number(for="number100") 100
 
-			.col-lg-3
-				h3.calc__subtitle Цвет
-				span.calc__color-square
-				select.calc__color#color(name="color-select")
-					option.calc__color-type.calc__color-type--blue(value="blue" selected) Небесно синий
-					option.calc__color-type.calc__color-type--red(value="red") Адово красный
-					option.calc__color-type.calc__color-type--green(value="green") Травянисто зеленый
+					.col-lg-3.col-md-5.col-off-md-1.col-sm-6
+						.calc__colors
+							h3.calc__subtitle Цвет
+							span.calc__color-square
+							select.calc__color#color(name="color-select")
+								option.calc__color-type.calc__color-type--blue(value="blue" selected) Небесно синий
+								option.calc__color-type.calc__color-type--red(value="red") Адово красный
+								option.calc__color-type.calc__color-type--green(value="green") Травянисто зеленый
 
-			.col-lg-3
-				h3.calc__subtitle Изображение
-				input.calc__pic-down#picDown(type="file" name="photoload" accept="image/*")
-				label.calc__pic-label(for="picDown") Загрузить картинку
+					.col-lg-3.col-md-5.col-off-md-1.col-sm-6
+						.calc__pic
+							h3.calc__subtitle Изображение
+							input.calc__pic-down#picDown(type="file" name="photoload" accept="image/*")
+							label.calc__pic-label(for="picDown") Загрузить картинку
 
-			.col-lg-3
-				.calc__col
-					h3.calc__subtitle Стоимость
-					p.calc__price#countPrise 1600 р
+					.col-lg-3.col-md-5.col-off-md-1.col-sm-6
+						.calc__count
+							h3.calc__subtitle Стоимость
+							p.calc__price#countPrise 1600 р
 
-	p.calc__we-contact Через несколько минут после заказа мы свяжемся с вами и уточним детали
-	
-	p.text-center
-		input.calc__make-order(type="submit" for="baloonOrder" value="Хочу шарики")
+			p.calc__we-contact Через несколько минут после заказа мы свяжемся с вами и уточним детали
+			
+			p.calc__button
+				input.calc__make-order(type="submit" for="baloonOrder" value="Хочу шарики")

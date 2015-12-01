@@ -11,14 +11,16 @@ head
 body
 	.wrapper
 		include template/cata-head
-		main
-			.container.dashed-border
-				.row
-					aside.col-lg-3.col-md-3.col-sm-0
-						include template/cata-aside
-					section.col-lg-9.col-md-9.col-sm-6
-						include template/cata-content
-			footer.container
-				include template/calculator
+
+		.container.dashed-border
+			.row
+				aside.col-lg-3.col-md-3.col-sm-0
+					include template/cata-aside
+
+				main.col-lg-9.col-md-9.col-sm-6
+					include template/cata-content
+
+		footer.container
+			include template/calculator
 				
 	script(src="js/main.js")

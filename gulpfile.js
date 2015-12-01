@@ -218,7 +218,7 @@ gulp.task('server', function() {
 		server: {
 			baseDir: 'build/'
 		},
-		tunnel: true,
+		tunnel: false,
 		host: 'localhost',
 		port: 9797,
 		logPrefix: 'server says'

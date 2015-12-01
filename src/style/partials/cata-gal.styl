@@ -1,14 +1,30 @@
 .cat-gal
 	padding 20px 0
+	
+	@media (min-width contWMd)
+		dashed-border(top)
 
 	&__title
 		font-size fz-main+3
-		display inline-block
-		margin 0 35px 15px 0
+		
+		@media (min-width contWMd)
+			margin 0 35px 15px 0
+			display inline-block
 		
 		&--light
 			color dark-blue
 			font-size fz-main+1
 			
+			@media (max-width (contWMd - 1px))
+				margin-bottom 10px
+				display inline-block
+			
 	&__img
 		width 100%
+	
+
+		
+
+
+
+
