@@ -1,9 +1,12 @@
--var item1 = "img/gal-img-1.jpg"
--var item2 = "img/gal-img-2.jpg"
--var item3 = "img/gal-img-3.jpg"
--var item4 = "img/gal-img-4.jpg"
+-galItems = [{src: 'img/gal-img-1.jpg', alt: 'галерейка'},{src: 'img/gal-img-2.jpg', alt: 'галерейка'},{src: 'img/gal-img-3.jpg', alt: 'галерейка'},{src: 'img/gal-img-4.jpg', alt: 'галерейка', disp: false}]
 
-mixin gal-item(number)
-	.col-lg-3.col-md-3.col-sm-1.text-center
-		a.cat-gal__link(href="#")
-			img.cat-gal__img(src="#{number}", alt="gallery item")
+mixin gal-item
+	each val in galItems
+		if val.disp === false
+			.col-lg-3.col-md-3.col-sm-0.text-center
+				a.cat-gal__link(href="#")
+					img.cat-gal__img(src=val.src, alt=val.alt)
+		else
+			.col-lg-3.col-md-3.col-sm-2.text-center
+				a.cat-gal__link(href="#")
+					img.cat-gal__img(src=val.src, alt=val.alt)

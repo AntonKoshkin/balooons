@@ -11,13 +11,26 @@
 			margin 0 35px 15px 0
 			display inline-block
 		
+		@media (max-width (contWMd - 1px))
+			margin 0 0 20px
+		
 		&--light
 			color dark-blue
 			font-size fz-main+1
 			
+			&-small
+				display none
+				
+				@media (max-width (contWMd - 1px))
+					font-size fz-main+1
+					margin-top 20px
+					margin-bottom 10px
+					display inline-block
+					color blue
+					text-decoration underline
+			
 			@media (max-width (contWMd - 1px))
-				margin-bottom 10px
-				display inline-block
+				display none
 			
 	&__img
 		width 100%

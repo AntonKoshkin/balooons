@@ -1,17 +1,14 @@
--var baloonRed = "img/baloon-red.jpg"
--var baloonBlue = "img/baloon-blue.jpg"
--var baloonCyan = "img/baloon-cyan.jpg"
--var baloonPurpur = "img/baloon-purpur.jpg"
+-baloons = [{src: 'img/baloon-red.jpg', title: 'красный шарик'},{src: 'img/baloon-blue.jpg', title: 'синий шарик'},{src: 'img/baloon-cyan.jpg', title: 'голубой шарик'},{src: 'img/baloon-purpur.jpg', title: 'пурпурный шарик'}]
 
-
-mixin catalog-item(color)
-	.col-lg-3.col-md-4.col-sm-3
-		.cat-item
-			h3.cat-item__title Шарик красный
-			.cat-item__img
-				img(src="#{color}", alt="baloon")
-			p.cat-item__price 100 руб
-			form.cat-item__order(action="")
-				input.cat-item__number#item-number(type="text" placeholder="2")
-				label.cat-item__unit(for="item-number") шт.
-				input.cat-item__to-basket(type="submit" value="В корзину")
+mixin catalog-item
+	each val in baloons
+		.col-lg-3.col-md-4.col-sm-3
+			.cat-item
+				h3.cat-item__title Шарик красный
+				.cat-item__img
+					img(src=val.src, alt=val.title)
+				p.cat-item__price 100 руб
+				form.cat-item__order(action="", method="post")
+					input.cat-item__number#item-number(type="text" placeholder="2")
+					label.cat-item__unit(for="item-number") шт.
+					input.cat-item__to-basket(type="submit" value="В корзину")

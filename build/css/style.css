@@ -1030,14 +1030,31 @@ body {
     display: inline-block;
   }
 }
+@media (max-width: 899px) {
+  .cat-gal__title {
+    margin: 0 0 20px;
+  }
+}
 .cat-gal__title--light {
   color: #292e32;
   font-size: 16px;
 }
+.cat-gal__title--light-small {
+  display: none;
+}
 @media (max-width: 899px) {
-  .cat-gal__title--light {
+  .cat-gal__title--light-small {
+    font-size: 16px;
+    margin-top: 20px;
     margin-bottom: 10px;
     display: inline-block;
+    color: #0a75ad;
+    text-decoration: underline;
+  }
+}
+@media (max-width: 899px) {
+  .cat-gal__title--light {
+    display: none;
   }
 }
 .cat-gal__img {

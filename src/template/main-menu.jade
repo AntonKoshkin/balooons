@@ -1,13 +1,13 @@
--var menu = {'Каталог': '#', 'Услуги': '#', 'Портфолио': '#', 'Доставка и оплата': '#', 'Оптовым клиентам': '#', 'Оформить заказ': '#'}
+-menu = [{href:'#', title:'Каталог', id:'catalog'},{href:'#', title:'Услуги', id:'services'},{href:'#', title:'Портфолио', id:'portfolio'},{href:'#', title:'Доставка и оплата', id:'payment'},{href:'#', title:'Оптовым клиентам', id:'wholesale'},{href:'#', title:'Оформить заказ', id:'formalization'}]
 
 nav.main-menu
 	.main-menu__burger
 		span.main-menu__burger-strip
 	ul.main-menu__list
-		each val, key in menu
-			if id === key
+		each val in menu
+			if val.id === id
 				li.main-menu__item
-					a.main-menu__a.main-menu__a--active(href="#{val}") #{key}
+					a.main-menu__a.main-menu__a--active(href=val.href)=val.title
 			else
 				li.main-menu__item
-					a.main-menu__a(href="#{val}") #{key}
+					a.main-menu__a(href=val.href)=val.title
