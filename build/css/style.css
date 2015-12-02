@@ -638,8 +638,9 @@ body {
 @media (max-width: 899px) {
   .logo__slogan {
     display: inline-block;
-    float: right;
-    padding: 30px 0 0;
+    position: relative;
+    bottom: 10px;
+    left: 50px;
   }
 }
 .header__main {
