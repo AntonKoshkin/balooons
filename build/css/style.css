@@ -501,7 +501,6 @@ td {
 .logo:before,
 .header__phone:first-child:before,
 .basket__title:before,
-.calc__pic-label:before,
 .order-baloons__perk:before {
   top: 0;
   bottom: 0;
@@ -512,7 +511,6 @@ td {
 .header__phone:first-child:before,
 .basket__title:before,
 .side-menu__title:after,
-.calc__pic-label:before,
 footer:after,
 .order-baloons__perk:before {
   position: absolute;
@@ -860,7 +858,7 @@ body {
     -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
             transform: rotate(45deg);
-    top: -2.5px;
+    top: -3px;
   }
   .main-menu__burger-strip--open:after {
     -webkit-transition: 0.5s;
@@ -868,7 +866,7 @@ body {
     -webkit-transform: rotate(-45deg);
         -ms-transform: rotate(-45deg);
             transform: rotate(-45deg);
-    bottom: -2.5px;
+    bottom: -3px;
   }
   .main-menu__a {
     display: inline-block;
@@ -1028,11 +1026,17 @@ body {
 .calc__pic-label {
   font-size: 15px;
   position: relative;
-  padding-left: 30px;
   color: #0a75ad;
   cursor: pointer;
+  padding-left: 30px;
 }
-.calc__pic-label:before {
+.calc__pic-label--round {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  display: inline-block;
   width: 20px;
   height: 20px;
   border-radius: 50%;

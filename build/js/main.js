@@ -9219,9 +9219,7 @@ jQuery(document).ready(function($) {
 		// добавляем класс открытия тому, по которому кликнули
 		$(this).find('.side-menu__sublist').addClass('side-menu__sublist--active');
 	});
-});
 
-jQuery(document).ready(function($) {
 	// вешаем событие на клик по бургеру
 	$('.main-menu__burger').on('click', function(event) {
 		// если ширина окна браузера < 900 пк
@@ -9234,9 +9232,7 @@ jQuery(document).ready(function($) {
 			$('.main-menu').toggleClass('main-menu--open');
 		};
 	});
-});
 
-jQuery(document).ready(function($) {
 	// если ширина экрана <900
 	if ($(window).width()<'900') {
 		// кладем элемент списка с активной ссылкой в переменную
@@ -9245,4 +9241,45 @@ jQuery(document).ready(function($) {
 		$('.main-menu__list').prepend(a);
 	};
 
+	// обрабатываем изменение в селекте цвета
+	$('#color').change(function(event) {
+		// кладем айди выбранного пункта в переменную
+		var pickedColor = $('#color option:selected').attr('id');
+	
+		// если выбран синий
+		if (pickedColor == 'colorBoxBlue') {
+			// то красим квадратик в синий
+			$('#calcColorBox').css('background', '#0a75ad');
+	
+		// если красный
+		} else if (pickedColor == 'colorBoxRed') {
+			// то красим в красный
+			$('#calcColorBox').css('background', '#ff5548');
+			
+		// если зеленый
+		} else if (pickedColor == 'colorBoxGreen') {
+			// то, соответственно, зеленый
+			$('#calcColorBox').css('background', 'green');
+		}
+	});
+
+	// обрабатываем изменения в выборе картинки
+	$('#picDown').change(function(event) {
+		// если картинка выбрана
+		if ($(this).val() != '') {
+			// то зажигаем лампочку
+			$('.calc__pic-label--round').css('background', '#48EC41');
+		};
+	});
+
+	// обрабатываем клик по чекбоксам
+	$('.calc__number').on('click',function(event) {
+		// кладем выбранное значение в переменную
+		var balNumber = $('input:checked').val();
+		// производим сложные математические вычисления
+		var totalPrice = balNumber*100-(balNumber*0.1)+100
+	
+		// полученное значение выводим
+		$('#countPrice').text(totalPrice);
+	});
 });

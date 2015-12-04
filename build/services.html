@@ -154,23 +154,23 @@
                     <div class="calc__num">
                       <h3 class="calc__subtitle">Количество</h3>
                       <div class="gray-box"></div>
-                      <input id="number10" type="radio" name="calcNumber"/>
+                      <input id="number10" type="radio" value="10" name="calcNumber" checked="checked"/>
                       <label for="number10" class="calc__number">10</label>
-                      <input id="number20" type="radio" name="calcNumber"/>
+                      <input id="number20" type="radio" value="20" name="calcNumber"/>
                       <label for="number20" class="calc__number">20</label>
-                      <input id="number50" type="radio" name="calcNumber"/>
+                      <input id="number50" type="radio" value="50" name="calcNumber"/>
                       <label for="number50" class="calc__number">50</label>
-                      <input id="number100" type="radio" name="calcNumber"/>
+                      <input id="number100" type="radio" value="100" name="calcNumber"/>
                       <label for="number100" class="calc__number">100</label>
                     </div>
                   </div>
                   <div class="col-lg-3 col-md-5 col-off-md-1 col-sm-6">
                     <div class="calc__colors">
-                      <h3 class="calc__subtitle">Цвет</h3><span class="calc__color-square"></span>
+                      <h3 class="calc__subtitle">Цвет</h3><span id="calcColorBox" class="calc__color-square"></span>
                       <select id="color" name="color-select" class="calc__color">
-                        <option value="blue" selected="selected" class="calc__color-type calc__color-type--blue">Небесно синий</option>
-                        <option value="red" class="calc__color-type calc__color-type--red">Адово красный</option>
-                        <option value="green" class="calc__color-type calc__color-type--green">Травянисто зеленый</option>
+                        <option id="colorBoxBlue" value="blue" class="calc__color-type calc__color-type--blue">Небесно синий</option>
+                        <option id="colorBoxRed" value="red" class="calc__color-type calc__color-type--red">Адово красный</option>
+                        <option id="colorBoxGreen" value="green" class="calc__color-type calc__color-type--green">Травянисто зеленый</option>
                       </select>
                     </div>
                   </div>
@@ -178,13 +178,13 @@
                     <div class="calc__pic">
                       <h3 class="calc__subtitle">Изображение</h3>
                       <input id="picDown" type="file" name="photoload" accept="image/*" class="calc__pic-down"/>
-                      <label for="picDown" class="calc__pic-label">Загрузить картинку</label>
+                      <label for="picDown" class="calc__pic-label"><span class="calc__pic-label--round"></span>Загрузить картинку</label>
                     </div>
                   </div>
                   <div class="col-lg-3 col-md-5 col-off-md-1 col-sm-6">
                     <div class="calc__count">
                       <h3 class="calc__subtitle">Стоимость</h3>
-                      <p id="countPrise" class="calc__price">1600 р</p>
+                      <p id="countPrice" class="calc__price">1600 р</p>
                     </div>
                   </div>
                 </div>

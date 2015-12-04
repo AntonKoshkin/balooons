@@ -79,13 +79,19 @@
 	&__pic-label
 		font-size fz-main
 		position relative
-		padding-left 30px
 		color blue
 		cursor pointer
+		padding-left 30px
 		
-		&:before
-			@extend $bifaf
-			@extend $left-center
+		&--round
+			// @extend $bifaf
+			// @extend $left-center
+			position absolute
+			top 0
+			bottom 0
+			left 0
+			margin auto
+			display inline-block
 			width 20px
 			height 20px
 			border-radius 50%

@@ -8,34 +8,36 @@
 						.calc__num
 							h3.calc__subtitle Количество
 							.gray-box
-							input#number10(type="radio" name="calcNumber")
+							input#number10(type="radio" value="10" name="calcNumber" checked)
 							label.calc__number(for="number10") 10
-							input#number20(type="radio" name="calcNumber")
+							input#number20(type="radio" value="20" name="calcNumber")
 							label.calc__number(for="number20") 20
-							input#number50(type="radio" name="calcNumber")
+							input#number50(type="radio" value="50" name="calcNumber")
 							label.calc__number(for="number50") 50
-							input#number100(type="radio" name="calcNumber")
+							input#number100(type="radio" value="100" name="calcNumber")
 							label.calc__number(for="number100") 100
 
 					.col-lg-3.col-md-5.col-off-md-1.col-sm-6
 						.calc__colors
 							h3.calc__subtitle Цвет
-							span.calc__color-square
+							span.calc__color-square#calcColorBox
 							select.calc__color#color(name="color-select")
-								option.calc__color-type.calc__color-type--blue(value="blue" selected) Небесно синий
-								option.calc__color-type.calc__color-type--red(value="red") Адово красный
-								option.calc__color-type.calc__color-type--green(value="green") Травянисто зеленый
+								option.calc__color-type.calc__color-type--blue#colorBoxBlue(value="blue") Небесно синий
+								option.calc__color-type.calc__color-type--red#colorBoxRed(value="red") Адово красный
+								option.calc__color-type.calc__color-type--green#colorBoxGreen(value="green") Травянисто зеленый
 
 					.col-lg-3.col-md-5.col-off-md-1.col-sm-6
 						.calc__pic
 							h3.calc__subtitle Изображение
 							input.calc__pic-down#picDown(type="file" name="photoload" accept="image/*")
-							label.calc__pic-label(for="picDown") Загрузить картинку
+							label.calc__pic-label(for="picDown")
+								span.calc__pic-label--round
+								| Загрузить картинку
 
 					.col-lg-3.col-md-5.col-off-md-1.col-sm-6
 						.calc__count
 							h3.calc__subtitle Стоимость
-							p.calc__price#countPrise 1600 р
+							p.calc__price#countPrice 1600 р
 
 			p.calc__we-contact Через несколько минут после заказа мы свяжемся с вами и уточним детали
 			
