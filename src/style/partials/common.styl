@@ -43,7 +43,7 @@ body
 	font-family cambria
 	color dark-gray
 	background #fff url(../img/main-bgi.jpg)
-	background-position: center
+	background-position: fixed
 
 .wrapper
 	background #fff
@@ -59,6 +59,10 @@ body
 	@media (max-width (contWMd - 1px))
 		width contWSm
 
-.dashed-border
-	@media (min-width contWLg)
-		dashed-border(bottom)
+.main
+	&__title
+		margin 0 0 35px
+		color red
+		font-size fz-main+6
+		font-weight bold
+	

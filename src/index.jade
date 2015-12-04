@@ -1,24 +1,15 @@
--id = 'catalog'
-include template/cata-item
-include template/cat-gal-item
+extends template/template
 
-<!DOCTYPE html>
-html(lang="ru")
-head
-	include template/links
-body
-	.wrapper
-		include template/cata-head
+block id
+	-id = 'catalog'
 
-		.container.dashed-border
-			.row
-				aside.col-lg-3.col-md-3.col-sm-0
-					include template/cata-aside
+block title
+	title Balooons - Каталог
 
-				main.col-lg-9.col-md-9.col-sm-6
-					include template/cata-content
+block content
+	.container.dashed-border
+		.row
+			include template/aside
 
-		footer.container
-			include template/calculator
-				
-	script(src="js/main.js")
+			include template/content-catalog
+	

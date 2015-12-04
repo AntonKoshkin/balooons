@@ -9210,19 +9210,39 @@ return jQuery;
 }));
 
 jQuery(document).ready(function($) {
+	// вешаем событие на клик по элементу списка
 	$('.side-menu__item').on('click', function(event) {
+		// отменяем действие по умолчанию
 		event.preventDefault();
-		/* Act on the event */
+		// убираем класс открытия у всех элементов меню
 		$('.side-menu__sublist').removeClass('side-menu__sublist--active');
+		// добавляем класс открытия тому, по которому кликнули
 		$(this).find('.side-menu__sublist').addClass('side-menu__sublist--active');
 	});
 });
 
 jQuery(document).ready(function($) {
+	// вешаем событие на клик по бургеру
 	$('.main-menu__burger').on('click', function(event) {
-		event.preventDefault();
-		/* Act on the event */
-		$('.main-menu__burger-strip').toggleClass('main-menu__burger-strip--open');
-		$('.main-menu').toggleClass('main-menu--open');
+		// если ширина окна браузера < 900 пк
+		if ($(window).width()<'900') {
+			// отменяем действие по умолчанию (так, на всякий)
+			event.preventDefault();
+			// вкл/выкл класс смены полосок на крестик
+			$('.main-menu__burger-strip').toggleClass('main-menu__burger-strip--open');
+			// вкл/выкл класс открывания меню
+			$('.main-menu').toggleClass('main-menu--open');
+		};
 	});
+});
+
+jQuery(document).ready(function($) {
+	// если ширина экрана <900
+	if ($(window).width()<'900') {
+		// кладем элемент списка с активной ссылкой в переменную
+		var a = $('.main-menu__a--active').closest('.main-menu__item');
+		// и перетаскиваем ее в начало списка
+		$('.main-menu__list').prepend(a);
+	};
+
 });

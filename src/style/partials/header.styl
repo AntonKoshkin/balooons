@@ -44,6 +44,8 @@
 			left 50px
 
 .header
+	padding-bottom 40px
+	
 	&__main
 		padding 35px 0
 		
@@ -97,6 +99,9 @@
 				@extend $left-center
 				
 				left -40px
+				
+		&__link
+			display block
 	
 	@media (min-width contWLg)
 		margin 0 50px 0 150px
@@ -171,7 +176,7 @@
 		overflow hidden
 		
 		&--open
-			height 206px
+			height 230px
 			transition height .5s
 		
 		&__list
@@ -181,8 +186,10 @@
 			display inline-block
 			float right
 			cursor pointer
+			height 30px
 			
 			&-strip
+				margin 12.5px 0
 				transition .5s
 				width 46px
 				height 5px
@@ -234,7 +241,7 @@
 		
 		&__a
 			display inline-block
-			padding 5px 5px 6px
+			padding 5px 5px 10px
 			
 			&--active
 				pointer-events none

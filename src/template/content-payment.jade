@@ -1,0 +1,41 @@
+.container
+	.order-baloons
+		.row
+			.col-lg-8.col-md-8.col-sm-6
+				h2.order-baloons__title Шарики для ваших мероприятий
+				p.order-baloons__text Напечатаем, надуем, привезём и поделимся хорошим настроением
+				.row
+					.col-lg-4.col-md-4.col-sm-2.col-off-sm-2
+						p.order-baloons__perk Разные шары
+					.col-lg-4.col-md-4.col-sm-2.col-off-sm-2
+						p.order-baloons__perk Быстрая печать
+					.col-lg-4.col-md-4.col-sm-2.col-off-sm-2
+						p.order-baloons__perk Доставка вовремя
+					
+					include choose-baloon
+					
+			.col-lg-4.col-md-4.col-sm-0
+				img.order-baloons__img(src="img/order-baloons-img.jpg", alt="")
+
+	.payment-content
+		.row
+			.col-lg-8.col-md-8.col-sm-12
+				.payment-content__text
+					p Текст о компании - это разновидность текста, который по умолчанию должен присутствовать на корпоративном сайте. Парадокс в том, что далеко не все посетители его читают - но, он все равно должен присутствовать.
+					p Просматривая многочисленные примеры таких текстов на сайтах разных компаний, поневоле напрашивается вывод о том, что к их написанию владельцы сайтов относятся, простите, наплевательски.
+					p Так, напишем хвалебную оду о том, какие мы классные, навешаем на себя ордена труда и славы, а на уши клиентов редчайшую лапшу – вкусную на слух, сладкую на смысл.
+				.row
+					.col-lg-6.col-md-6.col-sm-3
+						img.payment-content__img(src="img/payment-img-1.jpg", alt="")
+					.col-lg-6.col-md-6.col-sm-3
+						img.payment-content__img(src="img/payment-img-2.jpg", alt="")
+					.col-lg-6.col-md-6.col-sm-3
+						img.payment-content__img(src="img/payment-img-3.jpg", alt="")
+					.col-lg-6.col-md-6.col-sm-3
+						img.payment-content__img(src="img/payment-img-4.jpg", alt="")
+			.col-lg-4.col-md-4.col-sm-0
+				img.payment-content__main-img(src="img/payment-main.jpg", alt="")
+
+.container
+	.row
+		include gallery
