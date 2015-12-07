@@ -1,9 +1,11 @@
 .gray-box
-	display inline-block
-	width 40px
-	height 20px
-	background #fcf4ee
+	background pink
 	margin 0 10px -4px 0
+	font-size fz-main
+	width 40px
+	border none
+	text-align center
+	padding 4px 0
 
 .calc
 	padding 30px 0 100px
@@ -57,7 +59,7 @@
 		
 		&:checked
 			+ .calc__number
-				background #fcf4ee
+				background pink
 
 	&__color
 		
@@ -84,8 +86,6 @@
 		padding-left 30px
 		
 		&--round
-			// @extend $bifaf
-			// @extend $left-center
 			position absolute
 			top 0
 			bottom 0

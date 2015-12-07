@@ -7,7 +7,8 @@
 					.col-lg-3.col-md-5.col-off-md-1.col-sm-6
 						.calc__num
 							h3.calc__subtitle Количество
-							.gray-box
+							
+							input.gray-box#numberCust(type="text" maxlength="3" pattern="[0-9]{0,3}" placeholder="57")
 							input#number10(type="radio" value="10" name="calcNumber" checked)
 							label.calc__number(for="number10") 10
 							input#number20(type="radio" value="20" name="calcNumber")

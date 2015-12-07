@@ -150,7 +150,8 @@
 			transform skew(-30deg)
 		
 		&__list
-			width 100%
+			// width 100%
+			display inline-block
 			
 		&__item
 			display inline-block
@@ -160,13 +161,13 @@
 			display inline-block
 			position relative
 			z-index 1
-			padding 8px (250/12)px
+			padding 8px (240/12)px
 			
 			&--active
 				pointer-events none
 			
 			@media (min-width contWLg)
-				padding 8px (550/12)px
+				padding 8px (540/12)px
 	
 	@media (max-width (contWMd - 1px))
 		padding 10px
