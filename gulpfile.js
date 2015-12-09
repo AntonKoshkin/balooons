@@ -179,13 +179,17 @@ gulp.task('img:build', [	// сборка картинок (все вместе)
 	'img:min'					// пожать картинки
 ]);
 
-gulp.task('build', [	// главная сборка
-	'jade:build',		// сборка джейда
-	'style:build',		// сборка стайлуса
-	'js:build',			// сборка js
-	'fonts:build',		// перекладывание шрифтов
-	'img:build'			// сборка картинок
-]);
+// gulp.task('build', [	// главная сборка
+// 	'jade:build',		// сборка джейда
+// 	'style:build',		// сборка стайлуса
+// 	'js:build',			// сборка js
+// 	'fonts:build',		// перекладывание шрифтов
+// 	'img:build'			// сборка картинок
+// ]);
+
+gulp.task('build', function(){
+	gulp.start('jade:build', 'style:build', 'js:build', 'fonts:build', 'img:build');
+});
 
 gulp.task('clean', function() {	// чистка
 	return gulp.src(					//
@@ -226,9 +230,7 @@ gulp.task('server', function() {
 });
 
 gulp.task('default', function() {
-	gulp.start(
-		'watch',
-		['build']
-	);
+	gulp.start('build');
+	gulp.start('watch');
 	gulp.start('server');
 });

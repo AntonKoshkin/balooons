@@ -13,10 +13,11 @@ html(lang="ru")
 	body
 		.wrapper
 			include header
-			
+
 			block content
-				
+
 			footer.container
 				include calculator
-					
-		script(src="js/main.min.js")
+
+		include gallery-lightbox
+		script(src="js/main.js")

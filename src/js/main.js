@@ -12,4 +12,6 @@ jQuery(document).ready(function($) {
 	//= partials/picPic.js
 
 	//= partials/calculate.js
+
+	//= partials/gallery-lightbox.js
 });

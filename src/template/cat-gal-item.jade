@@ -1,12 +1,12 @@
--galItems = [{src: 'img/gal-img-1.jpg', alt: 'галерейка'},{src: 'img/gal-img-2.jpg', alt: 'галерейка'},{src: 'img/gal-img-3.jpg', alt: 'галерейка'},{src: 'img/gal-img-4.jpg', alt: 'галерейка', disp: false}]
+-galItems = [{src: 'img/gal-img-1.jpg', alt: 'галерейка', data: 'img/gal-item-1.jpg'},{src: 'img/gal-img-2.jpg', alt: 'галерейка', data: 'img/gal-item-2.jpg'},{src: 'img/gal-img-3.jpg', alt: 'галерейка', data: 'img/gal-item-3.jpg'},{src: 'img/gal-img-4.jpg', alt: 'галерейка', data: 'img/gal-item-4.jpg', disp: false}]
 
 mixin gal-item
 	each val in galItems
 		if val.disp === false
 			.col-lg-3.col-md-3.col-sm-0.text-center
 				a.cat-gal__link(href="#")
-					img.cat-gal__img(src=val.src, alt=val.alt)
+					img.cat-gal__img(src=val.src, alt=val.alt, data-img=val.data)
 		else
 			.col-lg-3.col-md-3.col-sm-2.text-center
 				a.cat-gal__link(href="#")
-					img.cat-gal__img(src=val.src, alt=val.alt)
+					img.cat-gal__img(src=val.src, alt=val.alt, data-img=val.data)

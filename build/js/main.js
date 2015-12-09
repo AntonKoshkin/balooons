@@ -9267,12 +9267,10 @@ jQuery(document).ready(function($) {
 	$('#picDown').change(function(event) {
 	
 		// если выбран один из этих форматов
-		if (
-			$(this).val().slice(-3) === 'peg' ||
-			$(this).val().slice(-3) === 'svg' ||
-			$(this).val().slice(-3) === 'png' ||
-			$(this).val().slice(-3) === 'jpg'
-		) {
+		if (	$(this).val().slice(-3) === 'peg' ||
+				$(this).val().slice(-3) === 'svg' ||
+				$(this).val().slice(-3) === 'png' ||
+				$(this).val().slice(-3) === 'jpg'	) {
 	
 			// то зажигаем лампочку
 			$('.calc__pic-label--round').css('background', '#48EC41');
@@ -9322,5 +9320,22 @@ jQuery(document).ready(function($) {
 	
 		// полученное значение выводим
 		$('#countPrice').text(Math.ceil(totalPrice));
+	});
+
+	$('.cat-gal__link').on('click', function(event) {
+		event.preventDefault();
+		/* Act on the event */
+		var pic = $(this).find('.cat-gal__img').attr('data-img');
+	
+		$('.gal-box__img').attr('src', pic);
+		$('.gal-box').addClass('gal-box--on');
+		$('html,body').css('overflow','hidden');
+	});
+	
+	$('.gal-box__close, .gal-box__back').on('click', function(event) {
+		event.preventDefault();
+		/* Act on the event */
+		$('.gal-box').removeClass('gal-box--on');
+		$('html,body').css('overflow','auto');
 	});
 });

@@ -2,12 +2,10 @@
 $('#picDown').change(function(event) {
 
 	// если выбран один из этих форматов
-	if (
-		$(this).val().slice(-3) === 'peg' ||
-		$(this).val().slice(-3) === 'svg' ||
-		$(this).val().slice(-3) === 'png' ||
-		$(this).val().slice(-3) === 'jpg'
-	) {
+	if (	$(this).val().slice(-3) === 'peg' ||
+			$(this).val().slice(-3) === 'svg' ||
+			$(this).val().slice(-3) === 'png' ||
+			$(this).val().slice(-3) === 'jpg'	) {
 
 		// то зажигаем лампочку
 		$('.calc__pic-label--round').css('background', '#48EC41');
