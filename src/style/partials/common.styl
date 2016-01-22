@@ -1,68 +1,23 @@
-// untouchable
-
-.pull-left
-	float left
-
-.pull-right *
-	float right
-
-.text-left
-	text-align left
-
-.text-center
-	text-align center
-
-.text-right
-	text-align right
-
 body
-	box-sizing border-box
-
-*
-	box-sizing inherit
-
-p
-	margin 0
-
-a
-	display inline-block
-	text-decoration none
-	color #000
-	
-ul
-	padding 0
-	margin 0
-	
-h1
-h2
-h3
-	margin 0
-	
-// other
-body
-	font-family cambria
-	color dark-gray
-	background #fff url(../img/main-bgi.jpg)
-	background-position: fixed
+	font-size fz-main
+	color gray-text
+	background-image url(../img/background.jpg)
+	background-repeat repeat
 
 .wrapper
-	background #fff
+	max-width 320px
+	background-color white
 	margin 0 auto
-	box-shadow 0 0 21px #000
-
-	@media (min-width contWLg)
-		width contWLg
-
-	@media (min-width contWMd) and (max-width (contWLg - 1))
-		width contWMd
-
-	@media (max-width (contWMd - 1px))
-		width contWSm
-
-.main
-	&__title
-		margin 0 0 35px
-		color red
-		font-size fz-main+6
-		font-weight bold
+	box-shadow 0 0 30px rgba(black, .5)
 	
+	@media (min-width 798px)
+		max-width 768px
+	
+	@media (min-width 1010px)
+		max-width 980px
+	
+	@media (min-width 1230px)
+		max-width 1200px
+
+svg
+	overflow hidden

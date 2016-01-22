@@ -1,0 +1,70 @@
+$disp-none
+	display none
+
+$bxb
+	box-sizing border-box
+
+$column
+	if (grid-type == inline)
+		display inline-block
+		vertical-align top
+		
+	if (grid-type == float)
+		display block
+		float left
+		
+	if (grid-type == flex)
+		display block	
+
+	box-sizing border-box
+	position relative
+	min-height 1px
+
+$clearfix
+	&:before
+	&:after
+		display table
+		content ''
+
+	&:after
+		clear both
+
+$row
+	if (grid-type == inline)
+		font-size 0
+		
+	if (grid-type == float)
+		@extend $clearfix
+		
+	if (grid-type == flex)
+		display flex
+		flex-wrap wrap
+		flex 0 1 auto
+		flex-direction row
+
+$abs-center
+	top 0
+	right 0
+	bottom 0
+	left 0
+	margin auto
+
+.container
+	margin-left auto
+	margin-right auto
+	position relative
+
+.centered
+	text-align center
+
+.righted
+	text-align right
+
+.lefted
+	text-align left
+
+.push-to-right
+	float right
+
+.push-to-left
+	float left

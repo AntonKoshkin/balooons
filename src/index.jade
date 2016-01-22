@@ -1,14 +1,9 @@
-extends template/template
+extends jade/template
 
 block id
 	-id = 'catalog'
 
 block title
-	title Balooons - Каталог
+	title Document
 
 block content
-	.container.dashed-border
-		.row
-			include template/aside
-
-			include template/content-catalog

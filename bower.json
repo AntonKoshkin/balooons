@@ -1,13 +1,13 @@
 {
-  "name": "ak_builder",
-  "description": "my front-end builder",
+  "name": "balooons",
+  "description": "some shop",
   "main": "gulpfile.js",
   "authors": [
     "Anton Koshkin"
   ],
   "license": "ISC",
   "moduleType": [],
-  "homepage": "https://github.com/AntonKoshkin",
+  "homepage": "https://github.com/AntonKoshkin/balooons",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -17,6 +17,7 @@
   ],
   "dependencies": {
     "jquery": "~2.1.4",
-    "normalize-styl": "*"
+    "normalize-styl": "*",
+    "bootstrap-stylus": "~5.0.2"
   }
 }

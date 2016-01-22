@@ -9208,149 +9208,63 @@ if ( typeof noGlobal === strundefined ) {
 return jQuery;
 
 }));
+// загрузка свг-спрайта в локарсторейдж
+(function(window, document) {
+	'use strict';
+	var file = 'img/svg.svg',	// путь к файлу спрайта на сервере
+			revision = 1;
 
-jQuery(document).ready(function($) {
-	// вешаем событие на клик по элементу списка
-	$('.side-menu__item').on('click', function(event) {
-		// отменяем действие по умолчанию
-		event.preventDefault();
-		// убираем класс открытия у всех элементов меню
-		$('.side-menu__sublist').removeClass('side-menu__sublist--active');
-		// добавляем класс открытия тому, по которому кликнули
-		$(this).find('.side-menu__sublist').addClass('side-menu__sublist--active');
-	});
+	if (!document.createElementNS ||
+		 !document
+		 	.createElementNS('http://www.w3.org/2000/svg', 'svg')
+		 		.createSVGRect)
+		return true;
 
-	// вешаем событие на клик по бургеру
-	$('.main-menu__burger').on('click', function(event) {
-		// если ширина окна браузера < 900 пк
-		if ($(window).width()<'900') {
-			// отменяем действие по умолчанию (так, на всякий)
-			event.preventDefault();
-			// вкл/выкл класс смены полосок на крестик
-			$('.main-menu__burger-strip').toggleClass('main-menu__burger-strip--open');
-			// вкл/выкл класс открывания меню
-			$('.main-menu').toggleClass('main-menu--open');
+	var isLocalStorage = 'localStorage' in
+		window && window.localStorage !== null,
+		request,
+		data,
+		insertIT = function() {
+			document
+				.body
+					.insertAdjacentHTML('afterbegin', data);
+		},
+		insert = function() {
+			if (document.body) insertIT();
+			else document
+				.addEventListener('DOMContentLoaded', insertIT);
 		};
-	});
 
-	// если ширина экрана <900
-	if ($(window).width()<'900') {
-		// кладем элемент списка с активной ссылкой в переменную
-		var a = $('.main-menu__a--active').closest('.main-menu__item');
-		// и перетаскиваем ее в начало списка
-		$('.main-menu__list').prepend(a);
-	};
+	if (isLocalStorage &&
+		localStorage.getItem('inlineSVGrev') == revision) {
+		data = localStorage.getItem('inlineSVGdata');
 
-	// обрабатываем изменение в селекте цвета
-	$('#color').change(function(event) {
-		// кладем айди выбранного пункта в переменную
-		var pickedColor = $('#color option:selected').attr('id');
-	
-		// если выбран синий
-		if (pickedColor == 'colorBoxBlue') {
-			// то красим квадратик в синий
-			$('#calcColorBox').css('background', '#0a75ad');
-	
-		// если красный
-		} else if (pickedColor == 'colorBoxRed') {
-			// то красим в красный
-			$('#calcColorBox').css('background', '#ff5548');
-			
-		// если зеленый
-		} else if (pickedColor == 'colorBoxGreen') {
-			// то, соответственно, зеленый
-			$('#calcColorBox').css('background', 'green');
+		if (data) {
+			insert();
+			return true;
 		}
-	});
+	}
 
-	// обрабатываем изменения в выборе картинки
-	$('#picDown').change(function(event) {
-	
-		// если выбран один из этих форматов
-		if (	$(this).val().slice(-3) === 'peg' ||
-				$(this).val().slice(-3) === 'svg' ||
-				$(this).val().slice(-3) === 'png' ||
-				$(this).val().slice(-3) === 'jpg'	) {
-	
-			// то зажигаем лампочку
-			$('.calc__pic-label--round').css('background', '#48EC41');
-	
-		// иначе
-		} else {
-	
-			// очищаем ввод
-			$(this).val('');
-	
-			// и гасим лампочку
-			$('.calc__pic-label--round').css('background', '#e8e8e8');
-		}
-	});
+	try {
+		request = new XMLHttpRequest();
+		request.open('GET', file, true);
+		request.onload = function() {
 
-	// обрабатываем клик по чекбоксам
-	var balNumber = 100;
-	var totalPrice = 500;
-	
-	// при вводе цифр в поле
-	$('#numberCust').on('input', function(event) {
-	
-		// кладем выбранное значение в переменную
-		balNumber = $('#numberCust').val();
-	
-		// отмеченный пункт отменяется
-		$('input:checked').prop('checked', false);
-	
-		// производим сложные математические вычисления
-		totalPrice = balNumber*100-(balNumber*0.1)+100
-	
-		// полученное значение выводим
-		$('#countPrice').text(Math.ceil(totalPrice));
-	});
-	
-	// при выборе готового варианта
-	$('.calc__number').on('click', function(event) {
-	
-		// кладем выбранное значение в переменную
-		balNumber = $(this).html();
-		
-		// обнуляем значение в текстовом поле
-		$('#numberCust').val('');
-	
-		// производим сложные математические вычисления
-		totalPrice = balNumber*100-(balNumber*0.1)+100
-	
-		// полученное значение выводим
-		$('#countPrice').text(Math.ceil(totalPrice));
-	});
+			if (request.status >= 200 && request.status < 400) {
+				data = request.responseText;
+				insert();
+				
+				if (isLocalStorage) {
+					localStorage.setItem('inlineSVGdata', data);
+					localStorage.setItem('inlineSVGrev', revision);
+				}
+			}
+		};
+		request.send();
+	} catch (e) {}
+}(window, document));
 
-	// обработка клика по миниатюре
-	$('.cat-gal__link').on('click', function(event) {
-	
-		// отменяем действие по умолчанию
-		event.preventDefault();
-	
-		// положим в переменную адрес большой картинки
-		var pic = $(this).find('.cat-gal__img').attr('data-img');
-	
-		// добавляем его в адрес для картинки в модалке
-		$('.gal-box__img').attr('src', pic);
-	
-		// добавляем класс видимости модалке
-		$('.gal-box').addClass('gal-box--on');
-	
-		// отключаем скролл у страницы
-		$('html,body').css('overflow','hidden');
-	});
-	
-	// обработка клика по кнопке закрытия и по фону
-	$('.gal-box__close, .gal-box__back').on('click', function(event) {
-	
-		//  отменяем действие по умолчанию
-		event.preventDefault();
-	
-		// удаляем класс видимости у модалки
-		$('.gal-box').removeClass('gal-box--on');
-	
-		// возвращаем скролл странице
-		$('html,body').css('overflow','auto');
-	});
-});
+document
+	.getElementsByTagName('body')[0]
+		.getElementsByTagName('svg')[0]
+			.setAttribute('style', 'display:none');
