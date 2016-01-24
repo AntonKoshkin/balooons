@@ -80,7 +80,11 @@
 		
 		&--active
 			pointer-events none
-		
+	
+	@media (min-width sm-min)
+		margin-left 20px
+		margin-right 20px
+			
 	@media (max-width sm-max)
 		&--open &__background
 			transform skewX(0deg)
@@ -104,13 +108,9 @@
 				transition height .2s linear 0s
 		
 		&--open &__menu
-			height 200px
+			height 240px
 			transition height .2s linear .2s
-	
-	@media (min-width sm-min)
-		margin-left 20px
-		margin-right 20px
-	
+			
 	@media (min-width md-min)
 		
 		&__background
@@ -125,15 +125,16 @@
 		
 		&__list
 			text-align center
+			// display inline-block
 
 		&__item
 			display inline-block
 			
 		&__a
 			display inline-block
-			padding 0px ((870 - 660)/12)px
+			padding 0px ((870 - 758)/14)px
 			color black
 	
 	@media (min-width lg-min)
 		&__a
-			padding 0px ((1090 - 652)/12)px
+			padding 0px ((1090 - 761)/14)px

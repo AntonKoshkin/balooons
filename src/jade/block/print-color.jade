@@ -1,0 +1,34 @@
+-printColor = {}
+
+-printColor.red		= []
+-printColor.red.id		= 'color-red'
+-printColor.red.img		= 'img/baloon--red.jpg'
+-printColor.red.alt		= 'Красный'
+
+-printColor.green		= []
+-printColor.green.id	= 'color-green'
+-printColor.green.img	= 'img/baloon--green.jpg'
+-printColor.green.alt	= 'Зеленый'
+
+-printColor.purpur	= []
+-printColor.purpur.id	= 'color-purpur'
+-printColor.purpur.img	= 'img/baloon--purpur.jpg'
+-printColor.purpur.alt	= 'Фиолетовый'
+
+-printColor.blue		= []
+-printColor.blue.id		= 'color-blue'
+-printColor.blue.img		= 'img/baloon--blue.jpg'
+-printColor.blue.alt		= 'Синий'
+
+mixin printColors()
+	each val in printColor
+		input.print-color__color-type(type='radio' name='color-type' id=val.id required)
+		label.print-color__label(for=val.id)
+			img.print-color__img(src=val.img, alt=val.alt)
+
+.print-color
+	h3.print-color__title 1. Выберите цвет
+	+printColors()
+	+printColors()
+	+printColors()
+	button.print-color__more-btn Смотреть всю палитру

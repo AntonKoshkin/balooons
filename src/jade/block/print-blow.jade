@@ -1,0 +1,18 @@
+-printGas = {}
+
+-printGas.helium	= []
+-printGas.helium.id		= 'blow-with-helium'
+-printGas.helium.title	= 'Гелием'
+
+-printGas.air		= []
+-printGas.air.id			= 'blow-with-air'
+-printGas.air.title		= 'Воздухом'
+
+mixin printGases()
+	each val in printGas
+		input.print-blow__radio(type='radio' name='blow-with' id=val.id required)
+		label.print-blow__label(for=val.id)=val.tite
+
+.print-blow
+	h3.print-blow__title 5. Надуть
+	+printGases()

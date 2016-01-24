@@ -1,34 +1,39 @@
 -menu = {}
 
--menu[1]				= []
--menu[1]['title']	= 'Каталог'
--menu[1]['href']	= '#'
--menu[1]['id']		= 'catalog'
+-menu.catalog		= []
+-menu.catalog.title		= 'Каталог'
+-menu.catalog.href		= 'index.html'
+-menu.catalog.id			= 'catalog'
 
--menu[2]				= []
--menu[2]['title']	= 'Услуги'
--menu[2]['href']	= '#'
--menu[2]['id']		= 'services'
+-menu.services		= []
+-menu.services.title		= 'Услуги'
+-menu.services.href		= '#'
+-menu.services.id			= 'services'
 
--menu[3]				= []
--menu[3]['title']	= 'Портфолио'
--menu[3]['href']	= '#'
--menu[3]['id']		= 'portfolio'
+-menu.portfolio	= []
+-menu.portfolio.title	= 'Портфолио'
+-menu.portfolio.href		= '#'
+-menu.portfolio.id		= 'portfolio'
 
--menu[4]				= []
--menu[4]['title']	= 'Доставка и оплата'
--menu[4]['href']	= '#'
--menu[4]['id']		= 'sheeping'
+-menu.print			= []
+-menu.print.title			= 'Заказ печати'
+-menu.print.href			= 'print.html'
+-menu.print.id				= 'print'
 
--menu[5]				= []
--menu[5]['title']	= 'Оптовым клиентам'
--menu[5]['href']	= '#'
--menu[5]['id']		= 'opt'
+-menu.sheeping		= []
+-menu.sheeping.title		= 'Доставка и оплата'
+-menu.sheeping.href		= '#'
+-menu.sheeping.id			= 'sheeping'
 
--menu[6]				= []
--menu[6]['title']	= 'Оформить заказ'
--menu[6]['href']	= '#'
--menu[6]['id']		= 'order'
+-menu.opt			= []
+-menu.opt.title			= 'Оптовым клиентам'
+-menu.opt.href				= '#'
+-menu.opt.id				= 'opt'
+
+-menu.order			= []
+-menu.order.title			= 'Оформить заказ'
+-menu.order.href			= '#'
+-menu.order.id				= 'order'
 
 mixin main-menu(block_name)
 	ul(class=block_name+'__list')
