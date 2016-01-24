@@ -7,6 +7,9 @@ for key, screen in widths								// iteration in widths
 	min-screen-w 	= screen[min-screen]				// extract min screen width
 
 	@media (min-width min-screen-w)	// iteration each screen width
+		
+		
+
 		// body
 		// 	min-width cont-width 						// that is fix, it's just necesary
 
@@ -33,6 +36,17 @@ for key, screen in widths								// iteration in widths
 			margin-left 0
 
 		${pref}-column										// that's for all columns, so make plceholder
+			if (grid-type == inline)
+				display inline-block
+				vertical-align top
+				
+			if (grid-type == float)
+				display block
+				float left
+				
+			if (grid-type == flex)
+				display block
+				
 			padding-left col-pad 						// paddings
 			padding-right col-pad
 

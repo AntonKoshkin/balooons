@@ -28,10 +28,10 @@ gulp.task('pngSprite', function () {
 			imgName: 'png-sprite.png',
 			imgPath: '../img/png-sprite.png',
 
-			retinaImgName: 'png-sprite@2x.png',
-			retinaImgPath: '../img/png-sprite@2x.png',
+			// retinaImgName: 'png-sprite@2x.png',
+			// retinaImgPath: '../img/png-sprite@2x.png',
 			
-			retinaSrcFilter: config.projectPath.src.pngRet,
+			// retinaSrcFilter: config.projectPath.src.pngRet,
 			
 			padding: 1,
 		}));

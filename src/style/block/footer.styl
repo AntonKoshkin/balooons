@@ -1,0 +1,19 @@
+.footer
+	padding-top 20px
+	overflow hidden
+
+	&__strip
+		sprite($png_color_border)
+		
+		position relative
+		left -250px
+	
+	@media (min-width md-min)
+		&__strip
+			left auto
+			right 220px
+	
+	@media (min-width lg-min)
+		&__strip
+			position static
+			right auto

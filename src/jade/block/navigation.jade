@@ -1,0 +1,50 @@
+-menu = {}
+
+-menu[1]				= []
+-menu[1]['title']	= 'Каталог'
+-menu[1]['href']	= '#'
+-menu[1]['id']		= 'catalog'
+
+-menu[2]				= []
+-menu[2]['title']	= 'Услуги'
+-menu[2]['href']	= '#'
+-menu[2]['id']		= 'services'
+
+-menu[3]				= []
+-menu[3]['title']	= 'Портфолио'
+-menu[3]['href']	= '#'
+-menu[3]['id']		= 'portfolio'
+
+-menu[4]				= []
+-menu[4]['title']	= 'Доставка и оплата'
+-menu[4]['href']	= '#'
+-menu[4]['id']		= 'sheeping'
+
+-menu[5]				= []
+-menu[5]['title']	= 'Оптовым клиентам'
+-menu[5]['href']	= '#'
+-menu[5]['id']		= 'opt'
+
+-menu[6]				= []
+-menu[6]['title']	= 'Оформить заказ'
+-menu[6]['href']	= '#'
+-menu[6]['id']		= 'order'
+
+mixin main-menu(block_name)
+	ul(class=block_name+'__list')
+		each val in menu
+			if val['id'] === page_id
+				li(class=block_name+'__item')
+					a(class=block_name+'__a '+block_name+'__a--active' href=val.href)=val.title
+			else
+				li(class=block_name+'__item')
+					a(class=block_name+'__a ' href=val.href)=val.title
+
+nav.navigation
+	.navigation__background
+	.navigation__btn#collapseBtn
+		span.navigation__strip
+		span.navigation__strip
+		span.navigation__strip
+	.navigation__menu#collapseMenu
+		+main-menu('navigation')

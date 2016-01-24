@@ -1,0 +1,103 @@
+.catalog-item
+	text-align center
+	padding-top 20px
+	padding-bottom 15px
+	
+	&__title
+		mix-catitem-title()
+	
+	&__face
+		width 100%
+		height 150px
+		vertical-align middle
+		overflow hidden
+		
+		&:before
+			display inline-block
+			height 100%
+			content ''
+			width 0
+			vertical-align middle
+		
+	&__img
+		max-height 100%
+		max-width 100%
+		vertical-align middle
+	
+	&__counter
+		mix-catitem-counter()
+		
+		margin 0 auto 20px
+		width 80px
+		overflow hidden
+		border 1px solid gray-border
+		border-radius 3px
+		position relative
+		
+	&__minus
+	&__plus
+		position absolute
+		width 25px
+		content ''
+		display inline-block
+		top 0
+		bottom 0
+		margin auto
+		cursor pointer
+		
+	&__minus
+		left 0px
+	
+	&__plus
+		right 0px
+	
+	&__button
+		display inline-block
+		position absolute
+		top 0
+		right 0
+		bottom 0
+		left 0
+		margin auto
+
+	&__minus &__button
+		sprite($png_minus)
+			
+	&__plus &__button
+		sprite($png_plus)
+				
+	&__input
+		text-align center
+		width 30px
+		border-left 1px solid gray-border
+		border-right 1px solid gray-border
+		border-top none
+		border-bottom none
+		outline none
+	
+	&__footer
+		@extend $clearfix
+		
+		mix-catitem-text()
+	
+	&__price
+		display inline-block
+		padding 4px 0
+		float left
+	
+	&__btn
+		text-transform lowercase
+		display inline-block
+		border none
+		background-color ohra
+		padding 4px 11px
+		float right
+	
+	@media(min-width sm-min)
+		padding-bottom 30px
+
+		&__footer
+			padding 0 30px
+	
+
+		

@@ -35,7 +35,7 @@ gulp.task('css', function() {
 					'ie >= 9',
 					'last 2 versions'
 				]}))
-				.pipe(csscomb())
+				// .pipe(csscomb())
 				.pipe(gulp
 					.dest(config.projectPath.build.css)
 				)

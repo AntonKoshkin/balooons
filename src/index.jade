@@ -1,9 +1,10 @@
 extends jade/template
 
 block id
-	-id = 'catalog'
+	-page_id = 'catalog'
 
 block title
 	title Document
 
 block content
+	include jade/catalog-content

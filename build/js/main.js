@@ -9209,62 +9209,58 @@ return jQuery;
 
 }));
 // загрузка свг-спрайта в локарсторейдж
-(function(window, document) {
-	'use strict';
-	var file = 'img/svg.svg',	// путь к файлу спрайта на сервере
-			revision = 1;
+// partials/svgCash.js
 
-	if (!document.createElementNS ||
-		 !document
-		 	.createElementNS('http://www.w3.org/2000/svg', 'svg')
-		 		.createSVGRect)
-		return true;
-
-	var isLocalStorage = 'localStorage' in
-		window && window.localStorage !== null,
-		request,
-		data,
-		insertIT = function() {
-			document
-				.body
-					.insertAdjacentHTML('afterbegin', data);
-		},
-		insert = function() {
-			if (document.body) insertIT();
-			else document
-				.addEventListener('DOMContentLoaded', insertIT);
-		};
-
-	if (isLocalStorage &&
-		localStorage.getItem('inlineSVGrev') == revision) {
-		data = localStorage.getItem('inlineSVGdata');
-
-		if (data) {
-			insert();
-			return true;
-		}
+jQuery(document).ready(function($) {
+	if ($(window).width() < 1010) {
+		var menuTitle = $('.navigation__a--active').closest('.navigation__item');
+		
+		$('.navigation__list').prepend(menuTitle);
 	}
-
-	try {
-		request = new XMLHttpRequest();
-		request.open('GET', file, true);
-		request.onload = function() {
-
-			if (request.status >= 200 && request.status < 400) {
-				data = request.responseText;
-				insert();
-				
-				if (isLocalStorage) {
-					localStorage.setItem('inlineSVGdata', data);
-					localStorage.setItem('inlineSVGrev', revision);
-				}
-			}
-		};
-		request.send();
-	} catch (e) {}
-}(window, document));
-
-document
-	.getElementsByTagName('body')[0]
-		.getElementsByTagName('svg')[0]
-			.setAttribute('style', 'display:none');
+	
+	$('body').on('click', '#collapseBtn', function(event) {
+		event.preventDefault();
+		
+		if ($(window).width() < 1010) {
+			event.preventDefault();
+			
+			$('.navigation').toggleClass('navigation--open');
+		}
+	});
+	function isNumeric(n) {
+		return !isNaN(parseFloat(n)) && isFinite(n);
+	}
+	
+	$('body').on('click', '.catalog-item__minus', function(event) {
+		event.preventDefault();
+		
+		var	input		= $(this).closest('.catalog-item__counter').find('.catalog-item__input'),
+				ifNumber	= isNumeric(input.val()),
+				baloonPrice	= $(this).closest('.catalog-item').find('.catalog-item__price').val().substr(0, 3);
+		console.log(baloonPrice);
+	
+		if (input.val() && ifNumber && (input.val() > 0)) {
+			input.val(parseFloat(input.val()) - 1);
+		} else {
+			input.val(0);
+		}
+	
+	
+	
+	});
+	
+	$('body').on('click', '.catalog-item__plus', function(event) {
+		event.preventDefault();
+	
+		var	input		= $(this).closest('.catalog-item__counter').find('.catalog-item__input'),
+				ifNumber	= isNumeric(input.val()),
+				baloonPrice	= $(this).closest('.catalog-item').find('.catalog-item__price').val().substr(0, 3);
+		console.log(baloonPrice);
+	
+		if (input.val() && ifNumber) {
+			input.val(parseFloat(input.val()) + 1);
+		} else {
+			input.val(0);
+		}
+	});
+});

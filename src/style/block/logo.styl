@@ -1,8 +1,34 @@
 .logo
-	&__icon
+	color gray-logo
+	
+	&:before
+		sprite($png_logo)
+
+		display inline-block
+		content ''
 		width 80px
 		height 118px
+		margin-right 5px
 		float left
 	
 	&__title
+		padding-top 10px
+		
 		mix-logo-title()
+	
+	&__slogan
+		display none
+		
+	@media (min-width sm-min)
+		position relative
+		left 15px
+		
+		&__slogan
+			display block
+			position relative
+			top -5px
+			
+			mix-logo-slogan()
+	
+	@media (min-width lg-min)
+		left 30px

@@ -1,0 +1,27 @@
+-asideMenu = {}
+
+-asideMenu[1] = []
+-asideMenu[1]['href'] = '#'
+-asideMenu[1]['title'] = 'Шарики'
+
+-asideMenu[2] = []
+-asideMenu[2]['href'] = '#'
+-asideMenu[2]['title'] = 'Шарири с печатью'
+
+-asideMenu[3] = []
+-asideMenu[3]['href'] = '#'
+-asideMenu[3]['title'] = 'Гирлянды'
+
+-asideMenu[4] = []
+-asideMenu[4]['href'] = '#'
+-asideMenu[4]['title'] = 'Фигуры'
+
+-asideMenu[5] = []
+-asideMenu[5]['href'] = '#'
+-asideMenu[5]['title'] = 'Готовые решения'
+
+nav.menu
+	ul.menu__list
+		each val in asideMenu
+			li.menu__item
+				a.menu__a(href=val.href)=val.title

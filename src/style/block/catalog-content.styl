@@ -1,0 +1,25 @@
+.catalog
+	
+	&__title
+		display none
+		
+	@media (min-width md-min)
+		&__title
+			mix-main-title()
+	
+	> .row
+		margin 0
+		
+		> div
+			padding-left 10px
+			padding-right 10px
+			box-shadow 2px 0 0 0 gray-border,
+				0 2px 0 0 gray-border,
+				2px 2px 0 0 gray-border,
+				inset 2px 0 0 0 gray-border,
+				inset 0 2px 0 0 gray-border
+	
+		@media(min-width sm-min)
+			margin 20px		
+
+@import 'catalog-item'

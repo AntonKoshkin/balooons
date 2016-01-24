@@ -9,9 +9,9 @@ gulp.task('build', function(cb) {
 		runSequence(
 			'clean',
 			'svgBuild',
+			'pngSprite',
 			'css',
 			'js',
-			'pngSprite',
 			'fonts',
 			'img',
 			cb
@@ -19,11 +19,11 @@ gulp.task('build', function(cb) {
 	} else {
 		runSequence(
 			'clean',
-			'svgBuild',
+			// 'svgBuild',
+			'pngSprite',
 			'html',
 			'css',
 			'js',
-			'pngSprite',
 			'fonts',
 			'img',
 			cb

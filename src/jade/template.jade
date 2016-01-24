@@ -15,14 +15,15 @@ html(lang='ru')
 
 		.wrapper
 			include header
-			
-			aside.aside
-				include aside
-			
-			main.main
-				block content
 
-			footer.footer
-				include footer
+			.container
+				.row
+					.col-xs-0.col-md-3
+						include aside
+
+					.col-xs-12.col-md-9
+						block content
+
+			include footer
 
 		script(src='js/main.js' async defer)

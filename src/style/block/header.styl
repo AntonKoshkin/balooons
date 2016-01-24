@@ -1,16 +1,35 @@
 .header
+	padding-bottom 15px
+	
 	&__strip
-		height 30px
+		height 25px
 		overflow hidden
 		position relative
+		margin-bottom 25px
 		
 	&__color-border
-		width 1200px
-		height 91px
+		sprite($png_color_border)
+
 		position absolute
 		bottom -1px
 		left -600px
 		right -600px
 		margin auto
+	
+	@media (min-width sm-min)
+		padding-bottom 30px
+		
+		&__strip
+			height 30px
+		
+	@media (min-width md-min)
+		padding-bottom 15px
+	
+	@media (min-width lg-min)
+		padding-bottom 20px
+
 
 @import 'logo'
+@import 'contacts'
+@import 'bucket'
+@import 'navigation'

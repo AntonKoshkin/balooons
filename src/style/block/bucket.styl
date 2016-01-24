@@ -1,0 +1,60 @@
+.bucket
+	position absolute
+	top -88px
+	left 40px
+	
+	&__a
+		display inline-block
+		
+		&:before
+			sprite($png_bucket_big)
+			
+			content ''
+			display inline-block
+	
+	@media(max-width xs-max)
+		&__text
+			display inline-block
+			border-radius 50%
+			width 30px
+			height 30px
+			text-align center
+			background-color black
+			position absolute
+			bottom -8px
+			right -8px
+	
+		&__counter
+			mix-bucket-counter()
+	
+	@media(min-width sm-min)
+		mix-bucket-text()
+		
+		margin-top 32px
+		margin-right 10px
+		top auto
+		left auto
+		position relative
+		text-align right
+		
+		&__a
+			text-align-last auto
+			position relative
+			padding-right 10px
+			
+			&:before
+				sprite($png_bucket)
+				
+				position absolute
+				left -42px
+				top -5px
+		
+		&__title
+			margin-bottom 10px
+		
+		&__text
+			color blue-link
+			text-decoration underline
+	
+	@media(min-width md-min)
+		margin-right 45px

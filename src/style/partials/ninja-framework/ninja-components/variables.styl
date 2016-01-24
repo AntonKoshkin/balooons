@@ -1,24 +1,13 @@
+$column
+	box-sizing border-box
+	position relative
+	min-height 1px
+
 $disp-none
 	display none
 
 $bxb
 	box-sizing border-box
-
-$column
-	if (grid-type == inline)
-		display inline-block
-		vertical-align top
-		
-	if (grid-type == float)
-		display block
-		float left
-		
-	if (grid-type == flex)
-		display block	
-
-	box-sizing border-box
-	position relative
-	min-height 1px
 
 $clearfix
 	&:before
