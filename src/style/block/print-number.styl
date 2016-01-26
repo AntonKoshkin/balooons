@@ -1,0 +1,80 @@
+.print-number
+	padding-bottom 20px
+	
+	&__title
+		mix-print-title()
+		
+		margin-bottom 20px
+	
+	&__row
+		mix-pnumber()
+	
+	&__counter
+		display inline-block
+		width 90px
+		overflow hidden
+		border 1px solid gray-border
+		border-radius 3px
+		position relative
+		text-align center
+	
+	&__minus
+	&__plus
+		position absolute
+		width 25px
+		display inline-block
+		top 0
+		bottom 0
+		margin auto
+		cursor pointer
+		
+		&:before
+			display inline-block
+			position absolute
+			top 0
+			right 0
+			bottom 0
+			left 0
+			margin auto
+			content ''
+
+	&__minus
+		left 0px
+	
+		&:before
+			sprite($png_minus)
+		
+	&__plus
+		right 0px	
+	
+		&:before
+			sprite($png_plus)
+				
+	&__input
+		text-align center
+		width 40px
+		border-left 1px solid gray-border
+		border-right 1px solid gray-border
+		border-top none
+		border-bottom none
+		outline none
+	
+	&__options
+		float right
+	
+	&__option
+		background none
+		border none
+		padding 0
+		padding 1px 5px
+		text-decoration underline
+		outline none
+	
+	@media (min-width sm-min)
+		&__options
+			margin-right 15px
+	
+	@media (min-width lg-min)
+		&__options
+			margin-right 30px
+		

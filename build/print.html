@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="HandheldFriendly" content="true"/>
     <link rel="stylesheet" href="css/style.min.css"/>
-    <title>Улет | Каталог</title>
+    <title>Улет | Заказ Печати</title>
   </head>
   <body>
     <div class="wrapper">
@@ -16,11 +16,9 @@
         </div>
         <div class="container">
           <div class="row">
-            <div class="col-xs-10 col-sm-5 col-md-4">
-              <div class="logo">
+            <div class="col-xs-10 col-sm-5 col-md-4"><a href="index.html" class="logo">
                 <p class="logo__title">Улёт</p>
-                <p class="logo__slogan">Наш девиз - педальку вниз!</p>
-              </div>
+                <p class="logo__slogan">Наш девиз - педальку вниз!</p></a>
             </div>
             <div class="col-xs-8 col-sm-4 col-md-5">
               <div class="centered">
@@ -73,82 +71,108 @@
           </div>
           <div class="col-xs-12 col-md-9">
             <main class="print">
-              <h1 class="print__title">Заказ печати</h1>
+              <h1 class="print__title main__title">Заказ печати</h1>
               <div class="print-params">
-                <div class="row">
-                  <div class="col-xs-12 col-sm-8 col-md-7 col-lg-8">
-                    <form action="" method="post" class="print-params__form">
+                <form action="" method="post" class="print-params__form">
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-7 col-md-7 col-lg-6">
                       <div class="print-color">
                         <h3 class="print-color__title">1. Выберите цвет</h3>
-                                              <input type="radio" name="color-type" id="color-red" required="required" class="print-color__color-type"/>
-                                              <label for="color-red" class="print-color__label"><img src="img/baloon--red.jpg" alt="Красный" class="print-color__img"/></label>
-                                              <input type="radio" name="color-type" id="color-green" required="required" class="print-color__color-type"/>
-                                              <label for="color-green" class="print-color__label"><img src="img/baloon--green.jpg" alt="Зеленый" class="print-color__img"/></label>
-                                              <input type="radio" name="color-type" id="color-purpur" required="required" class="print-color__color-type"/>
-                                              <label for="color-purpur" class="print-color__label"><img src="img/baloon--purpur.jpg" alt="Фиолетовый" class="print-color__img"/></label>
-                                              <input type="radio" name="color-type" id="color-blue" required="required" class="print-color__color-type"/>
-                                              <label for="color-blue" class="print-color__label"><img src="img/baloon--blue.jpg" alt="Синий" class="print-color__img"/></label>
-                                              <input type="radio" name="color-type" id="color-red" required="required" class="print-color__color-type"/>
-                                              <label for="color-red" class="print-color__label"><img src="img/baloon--red.jpg" alt="Красный" class="print-color__img"/></label>
-                                              <input type="radio" name="color-type" id="color-green" required="required" class="print-color__color-type"/>
-                                              <label for="color-green" class="print-color__label"><img src="img/baloon--green.jpg" alt="Зеленый" class="print-color__img"/></label>
-                                              <input type="radio" name="color-type" id="color-purpur" required="required" class="print-color__color-type"/>
-                                              <label for="color-purpur" class="print-color__label"><img src="img/baloon--purpur.jpg" alt="Фиолетовый" class="print-color__img"/></label>
-                                              <input type="radio" name="color-type" id="color-blue" required="required" class="print-color__color-type"/>
-                                              <label for="color-blue" class="print-color__label"><img src="img/baloon--blue.jpg" alt="Синий" class="print-color__img"/></label>
-                                              <input type="radio" name="color-type" id="color-red" required="required" class="print-color__color-type"/>
-                                              <label for="color-red" class="print-color__label"><img src="img/baloon--red.jpg" alt="Красный" class="print-color__img"/></label>
-                                              <input type="radio" name="color-type" id="color-green" required="required" class="print-color__color-type"/>
-                                              <label for="color-green" class="print-color__label"><img src="img/baloon--green.jpg" alt="Зеленый" class="print-color__img"/></label>
-                                              <input type="radio" name="color-type" id="color-purpur" required="required" class="print-color__color-type"/>
-                                              <label for="color-purpur" class="print-color__label"><img src="img/baloon--purpur.jpg" alt="Фиолетовый" class="print-color__img"/></label>
-                                              <input type="radio" name="color-type" id="color-blue" required="required" class="print-color__color-type"/>
-                                              <label for="color-blue" class="print-color__label"><img src="img/baloon--blue.jpg" alt="Синий" class="print-color__img"/></label>
-                        <button class="print-color__more-btn">Смотреть всю палитру</button>
+                        <div id="moreColorCont" class="print-color__colors">
+                                                <input type="radio" name="color-type" id="color-red" required="required" class="print-color__color-type"/>
+                                                <label for="color-red" class="print-color__label"><img src="img/baloon--red.jpg" alt="Красный" class="print-color__img"/></label>
+                                                <input type="radio" name="color-type" id="color-green" required="required" class="print-color__color-type"/>
+                                                <label for="color-green" class="print-color__label"><img src="img/baloon--green.jpg" alt="Зеленый" class="print-color__img"/></label>
+                                                <input type="radio" name="color-type" id="color-purpur" required="required" class="print-color__color-type"/>
+                                                <label for="color-purpur" class="print-color__label"><img src="img/baloon--purpur.jpg" alt="Фиолетовый" class="print-color__img"/></label>
+                                                <input type="radio" name="color-type" id="color-blue" required="required" class="print-color__color-type"/>
+                                                <label for="color-blue" class="print-color__label"><img src="img/baloon--blue.jpg" alt="Синий" class="print-color__img"/></label>
+                                                <input type="radio" name="color-type" id="color-red-2" required="required" class="print-color__color-type"/>
+                                                <label for="color-red-2" class="print-color__label"><img src="img/baloon--red.jpg" alt="Красный" class="print-color__img"/></label>
+                                                <input type="radio" name="color-type" id="color-green-2" required="required" class="print-color__color-type"/>
+                                                <label for="color-green-2" class="print-color__label"><img src="img/baloon--green.jpg" alt="Зеленый" class="print-color__img"/></label>
+                                                <input type="radio" name="color-type" id="color-purpur-2" required="required" class="print-color__color-type"/>
+                                                <label for="color-purpur-2" class="print-color__label"><img src="img/baloon--purpur.jpg" alt="Фиолетовый" class="print-color__img"/></label>
+                                                <input type="radio" name="color-type" id="color-blue-2" required="required" class="print-color__color-type"/>
+                                                <label for="color-blue-2" class="print-color__label"><img src="img/baloon--blue.jpg" alt="Синий" class="print-color__img"/></label>
+                        </div>
+                        <button id="moreColorBtn" class="print-color__more-btn">Смотреть всю палитру</button>
                       </div>
                       <div class="print-number">
                         <h3 class="print-number__title">2. Количество шаров</h3>
-                        <p class="print-number__row">
-                          <div class="print-number__counter">
-                            <input class="print-number__input"/>
+                        <div class="print-number__row">
+                          <div id="counter" class="print-number__counter">
+                            <div id="countMinus" class="print-number__minus"></div>
+                            <div id="countPlus" class="print-number__plus"></div>
+                            <input id="countNumber" type="text" placeholder="0" class="print-number__input"/>
                           </div>
                           <div class="print-number__options">
-                            <button class="print-number__option">5</button>
-                            <button class="print-number__option">10</button>
-                            <button class="print-number__option">25</button>
-                            <button class="print-number__option">50</button>
-                            <button class="print-number__option">100</button>
+                            <button id="counterBtn" class="print-number__option">5</button>
+                            <button id="counterBtn" class="print-number__option">10</button>
+                            <button id="counterBtn" class="print-number__option">25</button>
+                            <button id="counterBtn" class="print-number__option">50</button>
+                            <button id="counterBtn" class="print-number__option">100</button>
                           </div>
-                        </p>
+                        </div>
                       </div>
                       <div class="print-sides">
-                        <h3 class="print-sides">3. Количество сторон для печати</h3>
-                                              <input type="radio" name="number-of-printsides" id="oneColorOneSide" required="required" class="print-sides__radio"/>
-                                              <label for="oneColorOneSide" class="print-sides__label">1 цвет 1 сторона</label>
-                                              <input type="radio" name="number-of-printsides" id="twoColorsOneSide" required="required" class="print-sides__radio"/>
-                                              <label for="twoColorsOneSide" class="print-sides__label">2 цвета 1 сторона</label>
-                                              <input type="radio" name="number-of-printsides" id="oneColorTwoSides" required="required" class="print-sides__radio"/>
-                                              <label for="oneColorTwoSides" class="print-sides__label">1 цвет 2 стороны</label>
-                                              <input type="radio" name="number-of-printsides" id="twoColorstwoSides" required="required" class="print-sides__radio"/>
-                                              <label for="twoColorstwoSides" class="print-sides__label">2 цвета 2 стороны</label>
+                        <h3 class="print-sides__title">3. Количество сторон для печати</h3>
+                                              <div class="print-sides__option">
+                                                <input type="radio" name="number-of-printsides" id="oneColorOneSide" required="required" class="print-sides__radio"/>
+                                                <label for="oneColorOneSide" class="print-sides__label">1 цвет 1 сторона</label>
+                                              </div>
+                                              <div class="print-sides__option">
+                                                <input type="radio" name="number-of-printsides" id="oneColorTwoSides" required="required" class="print-sides__radio"/>
+                                                <label for="oneColorTwoSides" class="print-sides__label">1 цвет 2 стороны</label>
+                                              </div>
+                                              <div class="print-sides__option">
+                                                <input type="radio" name="number-of-printsides" id="twoColorsOneSide" required="required" class="print-sides__radio"/>
+                                                <label for="twoColorsOneSide" class="print-sides__label">2 цвета 1 сторона</label>
+                                              </div>
+                                              <div class="print-sides__option">
+                                                <input type="radio" name="number-of-printsides" id="twoColorstwoSides" required="required" class="print-sides__radio"/>
+                                                <label for="twoColorstwoSides" class="print-sides__label">2 цвета 2 стороны</label>
+                                              </div>
                       </div>
                       <div class="print-size">
                         <h3 class="print-size__title">4. Выберите размер</h3>
-                                              <input type="radio" name="size-of-baloon" id="printSize12inch" required="required" class="print-size__radio"/>
-                                              <label for="printSize12inch" class="print-size__label"></label>
-                                              <input type="radio" name="size-of-baloon" id="printSize14inch" required="required" class="print-size__radio"/>
-                                              <label for="printSize14inch" class="print-size__label"></label>
+                                              <div class="print-size__option">
+                                                <input type="radio" name="size-of-baloon" id="printSize12inch" required="required" class="print-size__radio"/>
+                                                <label for="printSize12inch" class="print-size__label">12-дюймовые</label>
+                                              </div>
+                                              <div class="print-size__option">
+                                                <input type="radio" name="size-of-baloon" id="printSize14inch" required="required" class="print-size__radio"/>
+                                                <label for="printSize14inch" class="print-size__label">14-дюймовые</label>
+                                              </div>
                       </div>
                       <div class="print-blow">
                         <h3 class="print-blow__title">5. Надуть</h3>
-                                              <input type="radio" name="blow-with" id="blow-with-helium" required="required" class="print-blow__radio"/>
-                                              <label for="blow-with-helium" class="print-blow__label"></label>
-                                              <input type="radio" name="blow-with" id="blow-with-air" required="required" class="print-blow__radio"/>
-                                              <label for="blow-with-air" class="print-blow__label"></label>
+                                              <div class="print-blow__option">
+                                                <input type="radio" name="blow-with" id="blow-with-helium" required="required" class="print-blow__radio"/>
+                                                <label for="blow-with-helium" class="print-blow__label">Гелием</label>
+                                              </div>
+                                              <div class="print-blow__option">
+                                                <input type="radio" name="blow-with" id="blow-with-air" required="required" class="print-blow__radio"/>
+                                                <label for="blow-with-air" class="print-blow__label">Воздухом</label>
+                                              </div>
                       </div>
-                    </form>
+                    </div>
+                    <div class="col-xs-0 col-sm-4 col-off-sm-1 col-md-5 col-off-md-0 col-lg-4 col-off-lg-2">
+                      <div class="print-sum">
+                        <div class="print-sum__baloon"><span id="orserBaloonNumber" class="print-sum__number">10 шт</span></div>
+                        <p class="print-sum__row"><span class="print-sum__title">Стоимость</span><span id="orderBaloonSum" class="print-sum__sum">399 р</span></p>
+                        <button class="print-sum__btn">Заказать</button>
+                      </div>
+                    </div>
+                    <div class="col-xs-12">
+                      <div class="print-send">
+                        <input type="name" placeholder="Ваше имя" class="print-send__input"/>
+                        <input type="tel" placeholder="Телефон для связи" pattern="+7[0-9]{10}" title="Введите номер телефона в формате +71234567890" required="required" class="print-send__input"/>
+                        <input type="submit" value="Заказать" class="print-send__btn"/>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                </form>
               </div>
             </main>
           </div>

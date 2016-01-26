@@ -1,11 +1,13 @@
 .print-number
 	h3.print-number__title 2. Количество шаров
-	p.print-number__row
-		.print-number__counter
-			input.print-number__input
+	.print-number__row
+		.print-number__counter#counter
+			.print-number__minus#countMinus
+			.print-number__plus#countPlus
+			input.print-number__input#countNumber(type='text' placeholder='0')
 		.print-number__options
-			button.print-number__option 5
-			button.print-number__option 10
-			button.print-number__option 25
-			button.print-number__option 50
-			button.print-number__option 100
+			button.print-number__option#counterBtn 5
+			button.print-number__option#counterBtn 10
+			button.print-number__option#counterBtn 25
+			button.print-number__option#counterBtn 50
+			button.print-number__option#counterBtn 100

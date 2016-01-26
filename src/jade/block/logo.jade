@@ -1,3 +1,8 @@
-.logo
-	p.logo__title Улёт
-	p.logo__slogan Наш девиз - педальку вниз!
+if page_id === 'catalog'
+	a.logo.logo__active(href='index.html')
+		p.logo__title Улёт
+		p.logo__slogan Наш девиз - педальку вниз!
+else
+	a.logo(href='index.html')
+		p.logo__title Улёт
+		p.logo__slogan Наш девиз - педальку вниз!

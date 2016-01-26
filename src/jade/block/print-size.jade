@@ -1,17 +1,18 @@
 -printSize = {}
 
--printSize.12inch	= []
--printSize.12inch.id		= 'printSize12inch'
--printSize.12inch.title	= '12-дюймовые'
+-printSize.inch12	= []
+-printSize.inch12.id		= 'printSize12inch'
+-printSize.inch12.title	= '12-дюймовые'
 
--printSize.14inch	= []
--printSize.14inch.id		= 'printSize14inch'
--printSize.14inch.title	= '14-дюймовые'
+-printSize.inch14	= []
+-printSize.inch14.id		= 'printSize14inch'
+-printSize.inch14.title	= '14-дюймовые'
 
 mixin printSizes()
 	each val in printSize
-		input.print-size__radio(type='radio' name='size-of-baloon' id=val.id required)
-		label.print-size__label(for=val.id)=val.tite
+		.print-size__option
+			input.print-size__radio(type='radio' name='size-of-baloon' id=val.id required)
+			label.print-size__label(for=val.id)=val.title
 
 .print-size
 	h3.print-size__title 4. Выберите размер

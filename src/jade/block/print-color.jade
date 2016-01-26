@@ -6,7 +6,7 @@
 -printColor.red.alt		= 'Красный'
 
 -printColor.green		= []
--printColor.green.id	= 'color-green'
+-printColor.green.id		= 'color-green'
 -printColor.green.img	= 'img/baloon--green.jpg'
 -printColor.green.alt	= 'Зеленый'
 
@@ -20,6 +20,26 @@
 -printColor.blue.img		= 'img/baloon--blue.jpg'
 -printColor.blue.alt		= 'Синий'
 
+-printColor.red2		= []
+-printColor.red2.id		= 'color-red-2'
+-printColor.red2.img		= 'img/baloon--red.jpg'
+-printColor.red2.alt		= 'Красный'
+
+-printColor.green2		= []
+-printColor.green2.id	= 'color-green-2'
+-printColor.green2.img	= 'img/baloon--green.jpg'
+-printColor.green2.alt	= 'Зеленый'
+
+-printColor.purpur2	= []
+-printColor.purpur2.id	= 'color-purpur-2'
+-printColor.purpur2.img	= 'img/baloon--purpur.jpg'
+-printColor.purpur2.alt	= 'Фиолетовый'
+
+-printColor.blue2		= []
+-printColor.blue2.id		= 'color-blue-2'
+-printColor.blue2.img	= 'img/baloon--blue.jpg'
+-printColor.blue2.alt	= 'Синий'
+
 mixin printColors()
 	each val in printColor
 		input.print-color__color-type(type='radio' name='color-type' id=val.id required)
@@ -28,7 +48,6 @@ mixin printColors()
 
 .print-color
 	h3.print-color__title 1. Выберите цвет
-	+printColors()
-	+printColors()
-	+printColors()
-	button.print-color__more-btn Смотреть всю палитру
+	.print-color__colors#moreColorCont
+		+printColors()
+	button.print-color__more-btn#moreColorBtn Смотреть всю палитру

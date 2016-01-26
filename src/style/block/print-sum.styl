@@ -1,0 +1,40 @@
+.print-sum
+	border 1px dashed gray-border
+	border-radius 5px
+	text-align center
+	padding 30px 20px 10px
+
+	&__baloon
+		sprite($png_baloon_counter)
+		
+		margin 0 auto 20px
+		padding-top 45px
+	
+	&__number
+		mix-psum-number()
+	
+	&__row
+		@extend $clearfix
+		
+		margin-bottom 17px
+	
+	&__title
+		mix-psum-title()
+		
+		float left
+
+	&__sum
+		mix-psum-sum()
+		
+		float right
+	
+	&__btn
+		mix-print-btn()
+		
+		background-color ohra
+		border none
+		border-radius 3px
+		padding 5px 46px 8px
+	
+	@media (min-width md-min)
+		margin-left 35px

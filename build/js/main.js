@@ -9236,13 +9236,14 @@ jQuery(document).ready(function($) {
 		
 		var	input		= $(this).closest('.catalog-item__counter').find('.catalog-item__input'),
 				ifNumber	= isNumeric(input.val()),
-				baloonPrice	= $(this).closest('.catalog-item').find('.catalog-item__price').val().substr(0, 3);
-		console.log(baloonPrice);
+				baloonPrice	= $(this).closest('.catalog-item').find('.catalog-item__price');
 	
 		if (input.val() && ifNumber && (input.val() > 0)) {
 			input.val(parseFloat(input.val()) - 1);
+			baloonPrice.text(input.val() * 100 + ' руб');
 		} else {
 			input.val(0);
+			baloonPrice.text('0 руб');
 		}
 	
 	
@@ -9254,13 +9255,61 @@ jQuery(document).ready(function($) {
 	
 		var	input		= $(this).closest('.catalog-item__counter').find('.catalog-item__input'),
 				ifNumber	= isNumeric(input.val()),
-				baloonPrice	= $(this).closest('.catalog-item').find('.catalog-item__price').val().substr(0, 3);
-		console.log(baloonPrice);
+				baloonPrice	= $(this).closest('.catalog-item').find('.catalog-item__price');
+		
+		if (input.val() && ifNumber) {
+			input.val(parseFloat(input.val()) + 1);
+			baloonPrice.text(input.val() * 100 + ' руб');
+		} else {
+			input.val(0);
+			baloonPrice.text('0 руб');
+		}
+	});
+	$('body').on('click', '#moreColorBtn', function(event) {
+		event.preventDefault();
+	
+		if ($('#moreColorCont').attr('class') == 'print-color__colors') {
+			$('#moreColorCont').attr('class', 'print-color__colors print-color__colors--open');
+			$(this).text('Скрыть палитру');
+		} else {
+			$('#moreColorCont').attr('class', 'print-color__colors');
+			$(this).text('Смотреть всю палитру');
+		}
+	});
+	$('body').on('click', '#countMinus', function(event) {
+		event.preventDefault();
+		
+		var	input		= $(this).closest('#counter').find('#countNumber'),
+				ifNumber	= isNumeric(input.val());
+	
+		if (input.val() && ifNumber && (input.val() > 0)) {
+			input.val(parseFloat(input.val()) - 1);
+		} else {
+			input.val(0);
+		}
+	
+	
+	
+	});
+	
+	$('body').on('click', '#countPlus', function(event) {
+		event.preventDefault();
+	
+		var	input		= $(this).closest('#counter').find('#countNumber'),
+				ifNumber	= isNumeric(input.val());
 	
 		if (input.val() && ifNumber) {
 			input.val(parseFloat(input.val()) + 1);
 		} else {
 			input.val(0);
 		}
+	});
+	
+	$('body').on('click', '#counterBtn', function(event) {
+		event.preventDefault();
+	
+		var keepingNumber = parseFloat($(this).text());
+	
+		$('#countNumber').val(keepingNumber);
 	});
 });

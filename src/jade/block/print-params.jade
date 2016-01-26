@@ -1,9 +1,13 @@
 .print-params
-	.row
-		.col-xs-12.col-sm-8.col-md-7.col-lg-8
-			form.print-params__form(action='' method='post')
+	form.print-params__form(action='' method='post')
+		.row
+			.col-xs-12.col-sm-7.col-md-7.col-lg-6
 				include print-color
 				include print-number
 				include print-sides
 				include print-size
 				include print-blow
+			.col-xs-0.col-sm-4.col-off-sm-1.col-md-5.col-off-md-0.col-lg-4.col-off-lg-2
+				include print-sum
+			.col-xs-12
+				include print-send

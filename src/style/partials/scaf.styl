@@ -37,10 +37,12 @@ mix-menu-items()
 
 
 // контент
+// заголовок
 mix-main-title()
 	font-size main-title
 	font-weight normal
 
+// каталог
 // элемент каталога
 mix-catitem-title()
 	font-size item-title
@@ -51,3 +53,96 @@ mix-catitem-counter()
 
 mix-catitem-text()
 	font-size item-text
+
+// заказ печати
+// выбор цвета
+mix-print-title()
+	font-size print-title
+	font-weight normal
+	text-align-last auto
+
+mix-pcolor-btn()
+	font-size print-btn
+
+mix-pnumber()
+	font-size print-counter
+
+mix-psides-radio()
+	font-size print-radio
+
+mix-psum-number()
+	font-size print-number
+	color white
+
+mix-psum-title()
+	font-size print-sum-title
+	color gray-logo
+
+mix-psum-sum()
+	font-size print-sum-sum
+	text-transform uppercase
+
+mix-print-btn()
+	font-size print-sum-title
+	color gray-logo
+
+mix-psend-input()
+	font-size print-send-input
+
+mix-psend-btn()
+	font-size print-send-btn
+	color black
+
+
+
+print-item()
+	&__title
+		mix-print-title()
+		
+		margin-bottom 20px
+	
+	&__option
+		mix-psides-radio()
+	
+		position relative
+		margin-bottom 15px
+		
+		&:last-child
+			margin-bottom 20px
+		
+		&:before
+			content ''
+			display inline-block
+			width 24px
+			height 24px
+			position absolute
+			border-radius 50%
+			background-color gray-border
+			
+	&__radio
+		display none
+	
+	&__label
+		display inline-block
+		padding 2px 0 2px 35px
+		position relative
+	
+	&__radio:checked + &__label
+		&:after
+			content ''
+			display inline-block
+			width 12px
+			height 12px
+			background-color rose
+			border-radius 50%
+			position absolute
+			left 6px
+			top 0
+			bottom 0
+			margin auto
+	
+	@media (min-width sm-min)
+		&__option
+			width 50%
+			display inline-block
+			margin-bottom 25px

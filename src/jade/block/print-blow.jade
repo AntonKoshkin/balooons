@@ -10,8 +10,9 @@
 
 mixin printGases()
 	each val in printGas
-		input.print-blow__radio(type='radio' name='blow-with' id=val.id required)
-		label.print-blow__label(for=val.id)=val.tite
+		.print-blow__option
+			input.print-blow__radio(type='radio' name='blow-with' id=val.id required)
+			label.print-blow__label(for=val.id)=val.title
 
 .print-blow
 	h3.print-blow__title 5. Надуть

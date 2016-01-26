@@ -1,0 +1,44 @@
+.print-send
+	&__input
+		mix-psend-input()
+		
+		border 1px solid gray-border
+		border-radius 3px
+		padding 5px
+		width 100%
+		margin-bottom 20px
+		outline none
+	
+		&::-webkit-input-placeholder
+			color black
+			font-family cambria
+			
+		&:-moz-placeholder
+			color black
+			font-family cambria
+			
+		&::-moz-placeholder
+			color black
+			font-family cambria
+			
+		&:-ms-input-placeholder
+			color black
+			font-family cambria
+	
+	&__btn
+		mix-psend-btn()
+		
+		background-color ohra
+		border none
+		border-radius 3px
+		padding 5px 46px 9px
+	
+	@media (min-width sm-min)
+		&__input
+			width 45%
+			margin-right 5%
+			margin-bottom 30px
+	
+	@media (min-width lg-min)
+		&__input
+			width 32%

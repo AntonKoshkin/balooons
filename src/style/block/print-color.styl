@@ -1,0 +1,89 @@
+.print-color
+	margin-bottom 25px
+	
+	&__title
+		mix-print-title()
+		
+		margin-bottom 18px
+	
+	&__colors
+		height 77px
+		transition height .2s
+		overflow hidden
+		margin-bottom 24px
+		
+		&--open
+			height 154px
+			transition height .2s
+		
+	&__color-type
+		display none
+	
+	&__label
+		display inline-block
+		width 25%
+		height 77px
+		vertical-align middle
+		overflow hidden
+		border-radius 3px
+		border 1px solid transparent
+		text-align center
+		
+		&:before
+			display inline-block
+			height 100%
+			content ''
+			width 0
+			vertical-align middle
+		
+	&__color-type:checked + &__label
+		border-color ohra
+
+	&__img
+		max-height 100%
+		max-width 100%
+		vertical-align middle
+	
+	&__more-btn
+		mix-pcolor-btn()
+		
+		background-color transparent
+		border 1px solid gray-border
+		border-radius 3px
+		padding 7px 22px
+		outline none
+	
+	@media (min-width sm-min)
+		&__colors
+			width auto
+			height 83px
+			
+			&--open
+				height 171px
+		
+		&__label
+			width 83px
+			height 83px
+			margin-right 5px
+			margin-bottom 5px
+			
+			&:nth-child(8)
+				margin-right 0
+	
+	@media (min-width md-min)
+		&__colors
+			height 66px
+			
+			&--open
+				height 142px
+		
+		&__label
+			width 66px
+			height 66px
+	
+	@media (min-width lg-min)
+		&__colors
+			margin-right 80px
+
+		&__color
+			margin-right 10px

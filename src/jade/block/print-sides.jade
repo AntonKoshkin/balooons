@@ -4,13 +4,13 @@
 -printSide.oneOne.id		= 'oneColorOneSide'
 -printSide.oneOne.title	= '1 цвет 1 сторона'
 
--printSide.twoOne	= []
--printSide.twoOne.id		= 'twoColorsOneSide'
--printSide.twoOne.title	= '2 цвета 1 сторона'
-
 -printSide.oneTwo	= []
 -printSide.oneTwo.id		= 'oneColorTwoSides'
 -printSide.oneTwo.title	= '1 цвет 2 стороны'
+
+-printSide.twoOne	= []
+-printSide.twoOne.id		= 'twoColorsOneSide'
+-printSide.twoOne.title	= '2 цвета 1 сторона'
 
 -printSide.twoTwo	= []
 -printSide.twoTwo.id		= 'twoColorstwoSides'
@@ -18,9 +18,10 @@
 
 mixin printSides()
 	each val in printSide
-		input.print-sides__radio(type='radio' name='number-of-printsides' id=val.id required)
-		label.print-sides__label(for=val.id)=val.title
+		.print-sides__option
+			input.print-sides__radio(type='radio' name='number-of-printsides' id=val.id required)
+			label.print-sides__label(for=val.id)=val.title
 
 .print-sides
-	h3.print-sides 3. Количество сторон для печати
+	h3.print-sides__title 3. Количество сторон для печати
 	+printSides()
