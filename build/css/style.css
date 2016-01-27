@@ -1738,10 +1738,11 @@ a {
   font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 3px;
-  padding: 5px;
+  padding: 6px;
   width: 100%;
   margin-bottom: 20px;
   outline: none;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
 }
 .print-send__input::-webkit-input-placeholder {
   color: #000;
@@ -1772,6 +1773,7 @@ a {
     width: 45%;
     margin-right: 5%;
     margin-bottom: 30px;
+    padding: 7px 10px;
   }
 }
 @media (min-width: 1230px) {
