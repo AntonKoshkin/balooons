@@ -6,4 +6,6 @@ jQuery(document).ready(function($) {
 	//= partials/item-counter.js
 	//= partials/print-more-btn.js
 	//= partials/print-number-counter.js
+	//= partials/baloon-counter.js
+	//= partials/scroll.js
 });

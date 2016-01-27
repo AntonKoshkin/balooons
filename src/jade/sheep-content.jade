@@ -1,0 +1,51 @@
+-sheep = {}
+
+-sheep.item1 = {}
+-sheep.item1.title = 'Пушкин'
+-sheep.item1.price = '300 р'
+
+-sheep.item2 = {}
+-sheep.item2.title = 'Павловск'
+-sheep.item2.price = '300 р'
+
+-sheep.item3 = {}
+-sheep.item3.title = 'Красное село'
+-sheep.item3.price = '300 р'
+
+-sheep.item4 = {}
+-sheep.item4.title = 'Стрельна'
+-sheep.item4.price = '300 р'
+
+-sheep.item5 = {}
+-sheep.item5.title = 'Пушкин'
+-sheep.item5.price = '300 р'
+
+-sheep.item6 = {}
+-sheep.item6.title = 'Павловск'
+-sheep.item6.price = '300 р'
+
+-sheep.item7 = {}
+-sheep.item7.title = 'Красное село'
+-sheep.item7.price = '300 р'
+
+-sheep.item8 = {}
+-sheep.item8.title = 'Стрельна'
+-sheep.item8.price = '300 р'
+
+mixin sheeping()
+	ul.sheeping__list
+		each item in sheep
+			li.sheeping__item
+				span.sheeping__place=item.title
+				span.sheeping__price=item.price
+
+main.sheeping
+	h1.sheeping__title.main__title Доставка 300 рублей или&nbsp;бесплатно
+	p.sheeping__option.sheeping__option--incad Доставка воздушных шаров по&nbsp;городу в&nbsp;перелах КАД 
+		span.sheeping__option--fat 300 р
+	p.sheeping__option.sheeping__option--present При заказе на&nbsp;сумму более 3000 рублей доставка 
+		span.sheeping__option--upper бесплатная
+		| .
+	p.sheeping__option.sheeping__option--incall Самовывоз от&nbsp;ст.&nbsp;м.&nbsp;Приморская по&nbsp;предворительной договорённости.
+	h2.sheeping__subtitle Стоимость доставки за&nbsp;пределы КАД&nbsp;(Ленинградская область)
+	+sheeping()

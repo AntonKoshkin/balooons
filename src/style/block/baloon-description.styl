@@ -1,0 +1,153 @@
+.baloon
+	&__face
+		width 100%
+		height 310px
+		vertical-align middle
+		overflow hidden
+		border 1px solid ohra
+		border-radius 3px
+		text-align center
+		margin-bottom 30px
+		
+		&:before
+			display inline-block
+			height 100%
+			content ''
+			width 0
+			vertical-align middle
+		
+	&__img
+		max-height 100%
+		max-width 100%
+		vertical-align middle
+	
+	&__text
+		mix-bal-text()
+		
+		margin-bottom 20px
+	
+	&__type
+		mix-bal-text()
+		
+		margin-bottom 10px
+	
+	&__size
+		mix-bal-text()
+		margin-bottom 15px
+	
+	&__row
+		margin-bottom 18px
+
+	&__color
+		display inline-block
+		vertical-align middle
+
+	&__sum
+		mix-bal-sum()
+		
+		display inline-block
+		width 110px
+		vertical-align middle
+	
+	&__select
+		mix-bal-sel()
+		
+		outline none
+		padding 5px 0 5px 5px
+		border 1px solid gray-mid
+		border-radius 4px
+		
+	&__counter
+		mix-catitem-counter()
+		
+		margin 0 auto 20px
+		width 100px
+		overflow hidden
+		border 1px solid gray-border
+		border-radius 3px
+		position relative
+		text-align center
+		display inline-block
+		margin-right 10px
+		
+	&__minus
+	&__plus
+		position absolute
+		width 30px
+		display inline-block
+		top 0
+		bottom 0
+		margin auto
+		cursor pointer
+		
+		&:after
+			content ''
+			display inline-block
+			position absolute
+			top 0
+			right 0
+			bottom 0
+			left 0
+			margin auto
+		
+	&__minus
+		left 0px
+	
+	&__plus
+		right 0px
+
+	&__minus:after
+		sprite($png_minus)
+			
+	&__plus:after
+		sprite($png_plus)
+				
+	&__input
+		text-align center
+		width 40px
+		border-left 1px solid gray-border
+		border-right 1px solid gray-border
+		border-top none
+		border-bottom none
+		outline none
+		padding 6px
+		font-size 17px
+	
+	&__submit
+		mix-bal-btn()
+		
+		border none
+		background-color ohra
+		border-radius 3px
+		padding 8px 40px
+		vertical-align top
+	
+	@media (min-width sm-min)
+		&__description
+			margin-bottom 90px
+			
+		&__face
+			height 345px
+		
+		&__size
+			margin-bottom 25px
+		
+		&__sum
+			margin-right 10px
+		
+		&__counter
+			margin-right 20px
+	
+	@media (min-width md-min)
+		&__description
+			margin-bottom 40px
+			
+		&__face
+			height 330px
+	
+	@media (min-width lg-min)
+		&__description
+			margin-left 20px
+
+		&__face
+			height 490px

@@ -9280,36 +9280,123 @@ jQuery(document).ready(function($) {
 		event.preventDefault();
 		
 		var	input		= $(this).closest('#counter').find('#countNumber'),
-				ifNumber	= isNumeric(input.val());
+				ifNumber	= isNumeric(input.val()),
+				output	= $('#orderBaloonSum'),
+				numb;
 	
 		if (input.val() && ifNumber && (input.val() > 0)) {
 			input.val(parseFloat(input.val()) - 1);
+			numb = input.val();
+			output.text(parseFloat(numb) * 99 +' р');
+			console.log(output)
 		} else {
 			input.val(0);
+			numb = input.val();
+			output.text(parseFloat(numb) * 99 +' р');
 		}
-	
-	
-	
 	});
 	
 	$('body').on('click', '#countPlus', function(event) {
 		event.preventDefault();
 	
 		var	input		= $(this).closest('#counter').find('#countNumber'),
-				ifNumber	= isNumeric(input.val());
+				ifNumber	= isNumeric(input.val()),
+				output	= $('#orderBaloonSum'),
+				numb;
 	
 		if (input.val() && ifNumber) {
 			input.val(parseFloat(input.val()) + 1);
+			numb = input.val();
+			output.text(parseFloat(numb) * 99 +' р');
 		} else {
 			input.val(0);
+			numb = input.val();
+			output.text(parseFloat(numb) * 99 +' р');
 		}
 	});
 	
 	$('body').on('click', '#counterBtn', function(event) {
 		event.preventDefault();
 	
-		var keepingNumber = parseFloat($(this).text());
+		var	keepingNumber = parseFloat($(this).text()),
+				output	= $('#orderBaloonSum');
 	
 		$('#countNumber').val(keepingNumber);
+		output.text(parseFloat(keepingNumber) * 99 +' р');
+	});
+	$('body').on('click', '.baloon__minus', function(event) {
+		event.preventDefault();
+		
+		var	input			= $(this).closest('.baloon__counter').find('.baloon__input'),
+				ifNumber		= isNumeric(input.val()),
+				baloonPrice	= $(this).closest('.baloon').find('.baloon__sum');
+	
+		if (input.val() && ifNumber && (input.val() > 0)) {
+			input.val(parseFloat(input.val()) - 1);
+			baloonPrice.text(input.val() * 50 + ' руб');
+		} else {
+			input.val(0);
+			baloonPrice.text('0 руб');
+		}
+	});
+	
+	$('body').on('click', '.baloon__plus', function(event) {
+		event.preventDefault();
+	
+		var	input			= $(this).closest('.baloon__counter').find('.baloon__input'),
+				ifNumber		= isNumeric(input.val()),
+				baloonPrice	= $(this).closest('.baloon').find('.baloon__sum');
+		
+		if (input.val() && ifNumber) {
+			input.val(parseFloat(input.val()) + 1);
+			baloonPrice.text(input.val() * 50 + ' руб');
+		} else {
+			input.val(0);
+			baloonPrice.text('0 руб');
+		}
+	});
+	
+	$('body').on('click', '.baloon-also__minus', function(event) {
+		event.preventDefault();
+		
+		var	input			= $(this).closest('.baloon-also__counter').find('.baloon-also__input'),
+				ifNumber		= isNumeric(input.val()),
+				baloonPrice	= $(this).closest('.baloon-also__item').find('.baloon-also__price');
+	
+		if (input.val() && ifNumber && (input.val() > 0)) {
+			input.val(parseFloat(input.val()) - 1);
+			baloonPrice.text(input.val() * 99 + ' руб');
+		} else {
+			input.val(0);
+			baloonPrice.text('0 руб');
+		}
+	});
+	
+	$('body').on('click', '.baloon-also__plus', function(event) {
+		event.preventDefault();
+	
+		var	input			= $(this).closest('.baloon-also__counter').find('.baloon-also__input'),
+				ifNumber		= isNumeric(input.val()),
+				baloonPrice	= $(this).closest('.baloon-also__item').find('.baloon-also__price');
+		
+		if (input.val() && ifNumber) {
+			input.val(parseFloat(input.val()) + 1);
+			baloonPrice.text(input.val() * 99 + ' руб');
+		} else {
+			input.val(0);
+			baloonPrice.text('0 руб');
+		}
+	});
+	$('a[href^="#"]').on('click', function(e){
+		e.preventDefault();
+		if ($(this).attr('href').length > 1) {
+			point = $(this).attr('href');
+			coord = $(point).offset().top;
+			$('html,body')
+				.stop()
+				.animate({
+					scrollTop: coord
+				}, 1000);
+		}
 	});
 });

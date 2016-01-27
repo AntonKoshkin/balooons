@@ -1,0 +1,39 @@
+-balAlso = {}
+
+-balAlso.green = {}
+-balAlso.green.img = 'img/baloon--green.jpg'
+-balAlso.green.title = 'Шар зеленый'
+-balAlso.green.href = 'baloon.html'
+-balAlso.green.alt = 'Шар зеленый'
+-balAlso.green.price = '100 руб'
+
+-balAlso.purpur = {}
+-balAlso.purpur.img = 'img/baloon--purpur.jpg'
+-balAlso.purpur.title = 'Шар фиолетовый'
+-balAlso.purpur.href = 'baloon.html'
+-balAlso.purpur.alt = 'Шар фиолетовый'
+-balAlso.purpur.price = '100 руб'
+
+-balAlso.blue = {}
+-balAlso.blue.img = 'img/baloon--blue.jpg'
+-balAlso.blue.title = 'Шар синий'
+-balAlso.blue.href = 'baloon.html'
+-balAlso.blue.alt = 'Шар синий'
+-balAlso.blue.price = '100 руб'
+
+.baloon-also
+	h2.baloon-also__main-title С этим товаром часто выбирают
+	each item in balAlso
+		.col-xs-0.col-sm-4.col-lg-3
+			.baloon-also__item
+				h3.baloon-also__title=item.title
+				.baloon-also__face
+					a.baloon-also__a(href=item.href)
+						img.baloon-also__img(src=item.img, alt=item.alt)
+				.baloon-also__counter
+					span.baloon-also__minus
+					span.baloon-also__plus
+					input.baloon-also__input(type='text' placeholder='0' pattern='[0-9]{,3}' maxlength='3')
+				p.baloon-also__footer
+					span.baloon-also__price=item.price
+					button.baloon-also__btn В корзину

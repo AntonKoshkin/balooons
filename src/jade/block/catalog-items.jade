@@ -5,24 +5,28 @@
 -catItem.red.src			= 'img/baloon--red.jpg'
 -catItem.red.alt			= 'Красный шарик'
 -catItem.red.price		= '100 руб'
+-catItem.red.href			= 'baloon.html'
 
 -catItem.green		= []
 -catItem.green.title		= 'Шар зеленый'
 -catItem.green.src		= 'img/baloon--green.jpg'
 -catItem.green.alt		= 'Зеленый шарик'
 -catItem.green.price		= '100 руб'
+-catItem.green.href		= 'baloon.html'
 
 -catItem.purpur	= []
 -catItem.purpur.title	= 'Шар фиолетовый'
 -catItem.purpur.src		= 'img/baloon--purpur.jpg'
 -catItem.purpur.alt		= 'Фиолетовый шарик'
 -catItem.purpur.price	= '100 руб'
+-catItem.purpur.href		= 'baloon.html'
 
 -catItem.blue		= []
 -catItem.blue.title		= 'Шар синий'
 -catItem.blue.src			= 'img/baloon--blue.jpg'
 -catItem.blue.alt			= 'Синий шарик'
 -catItem.blue.price		= '100 руб'
+-catItem.blue.href		= 'baloon.html'
 
 mixin catalog-items()
 	each val in catItem
@@ -30,7 +34,8 @@ mixin catalog-items()
 			.catalog-item
 				h3.catalog-item__title=val.title
 				.catalog-item__face
-					img.catalog-item__img(src=val.src, alt=val.alt)
+					a.catalog-item__a(href=val.href)
+						img.catalog-item__img(src=val.src, alt=val.alt)
 				.catalog-item__counter
 					span.catalog-item__minus
 						span.catalog-item__button
@@ -40,3 +45,5 @@ mixin catalog-items()
 				p.catalog-item__footer
 					span.catalog-item__price=val.price
 					button.catalog-item__btn В корзину
+
++catalog-items()

@@ -1,0 +1,46 @@
+.portf-album
+	&__title
+		display none
+	
+	&__face
+		width 100%
+		min-height 300px
+		text-align center
+		overflow hidden
+		position relative
+		margin-bottom 20px
+		
+	&__img
+		position absolute
+		top -500px
+		right -500px
+		bottom -500px
+		left -500px
+		margin auto
+		min-width 100%
+		min-height 100%
+		
+	
+	@media (min-width sm-min)
+		margin-bottom 20px
+		
+		&__title
+			display block
+			font-size 23px
+			font-weight normal
+			margin-bottom 30px
+		
+		.row
+			margin-left -10px
+			margin-right -10px
+
+		.col-xs-12
+			padding-left 10px
+			padding-right 10px
+	
+		&__face
+			min-height 215px
+	
+	@media (min-width lg-min)
+		&__face
+			min-height 270px

@@ -1,0 +1,35 @@
+main.baloon
+	include block/brcr
+
+	h1.baloon__title.main__title Красный шарик
+	.row
+		.col-xs-12.col-sm-6.col-lg-7
+			.baloon__face
+				img.baloon__img(src='img/bal_item.jpg', alt='Красный шарик')
+		.col-xs-12.col-sm-6.col-lg-5
+			.baloon__description
+				span.baloon__price 50 р/шт
+				p.baloon__text Воздушные шары уже стали неотъемлемым элементом любого раздника! Компания Шариков предлагает Вам большое разнообразие гелиевых шаров на любой вкус. В&nbsp;нашей компании каждый найдет то, что&nbsp;нужно именно&nbsp;ему!
+					br
+					| И несомненно останется доволен.
+				p.baloon__type Материал - 
+					span.baloon__madeof шариковая пластмасса
+				p.baloon__size Размер - 
+					span.baloon__number 32 см
+				form.baloon__form(action='' method='post')
+					.baloon__row
+						span.baloon__sum 250 р
+						.baloon__color
+							select.baloon__select(name='color-picker')
+								option.baloon__option(value='red' selected) Красный
+								option.baloon__option(value='green') Зеленый
+								option.baloon__option(value='purpur') Фиолетовый
+								option.baloon__option(value='blue') Синий
+					.baloon__row
+						.baloon__counter
+							span.baloon__minus
+							span.baloon__plus
+							input.baloon__input(type='text' placeholder='0' pattern='[0-9]{,3}' maxlength='3')
+						input.baloon__submit(type='submit' value='В корзину')
+
+	include block/baloon-also

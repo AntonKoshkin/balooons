@@ -1,0 +1,22 @@
+-pMenu = {}
+
+-pMenu.item1 = {}
+-pMenu.item1.title = 'Печать на шарах'
+-pMenu.item1.href = '#portfPrint'
+
+-pMenu.item2 = {}
+-pMenu.item2.title = 'Гирлянды'
+-pMenu.item2.href = '#portfGirl'
+
+-pMenu.item3 = {}
+-pMenu.item3.title = 'Оформление праздников'
+-pMenu.item3.href = '#portfCel'
+
+mixin pMenu()
+	nav.portf-menu
+		ul.portf-menu__list
+			each item in pMenu
+				li.portf-menu__item
+					a.portf-menu__a(href=item.href)=item.title
+
++pMenu()
