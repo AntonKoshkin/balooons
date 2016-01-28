@@ -7,7 +7,7 @@ var	serverConfig = {
 			server: {
 				baseDir: "./build/"
 			},
-			// tunnel: true,
+			tunnel: true,
 			host: 'localhost',
 			port: 9797,
 			injectChanges: true,

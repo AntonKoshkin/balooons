@@ -25,8 +25,8 @@ $('body').on('click', '.baloon__plus', function(event) {
 		input.val(parseFloat(input.val()) + 1);
 		baloonPrice.text(input.val() * 50 + ' руб');
 	} else {
-		input.val(0);
-		baloonPrice.text('0 руб');
+		input.val(1);
+		baloonPrice.text(input.val() * 50 + ' руб');
 	}
 });
 
@@ -57,7 +57,7 @@ $('body').on('click', '.baloon-also__plus', function(event) {
 		input.val(parseFloat(input.val()) + 1);
 		baloonPrice.text(input.val() * 99 + ' руб');
 	} else {
-		input.val(0);
-		baloonPrice.text('0 руб');
+		input.val(1);
+		baloonPrice.text(input.val() * 99 + ' руб');
 	}
 });

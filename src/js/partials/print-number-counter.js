@@ -10,7 +10,6 @@ $('body').on('click', '#countMinus', function(event) {
 		input.val(parseFloat(input.val()) - 1);
 		numb = input.val();
 		output.text(parseFloat(numb) * 99 +' р');
-		console.log(output)
 	} else {
 		input.val(0);
 		numb = input.val();
@@ -31,7 +30,7 @@ $('body').on('click', '#countPlus', function(event) {
 		numb = input.val();
 		output.text(parseFloat(numb) * 99 +' р');
 	} else {
-		input.val(0);
+		input.val(1);
 		numb = input.val();
 		output.text(parseFloat(numb) * 99 +' р');
 	}

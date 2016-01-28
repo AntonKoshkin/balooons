@@ -28,11 +28,11 @@ $('body').on('click', '.catalog-item__plus', function(event) {
 			ifNumber	= isNumeric(input.val()),
 			baloonPrice	= $(this).closest('.catalog-item').find('.catalog-item__price');
 	
-	if (input.val() && ifNumber) {
+	if (input.val() && ifNumber && (input.val() < 999)) {
 		input.val(parseFloat(input.val()) + 1);
 		baloonPrice.text(input.val() * 100 + ' руб');
-	} else {
-		input.val(0);
-		baloonPrice.text('0 руб');
+	} else if (input.val() != 999) {
+		input.val(1);
+		baloonPrice.text(input.val() * 100 + ' руб');
 	}
 });

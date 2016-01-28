@@ -9257,12 +9257,12 @@ jQuery(document).ready(function($) {
 				ifNumber	= isNumeric(input.val()),
 				baloonPrice	= $(this).closest('.catalog-item').find('.catalog-item__price');
 		
-		if (input.val() && ifNumber) {
+		if (input.val() && ifNumber && (input.val() < 999)) {
 			input.val(parseFloat(input.val()) + 1);
 			baloonPrice.text(input.val() * 100 + ' руб');
-		} else {
-			input.val(0);
-			baloonPrice.text('0 руб');
+		} else if (input.val() != 999) {
+			input.val(1);
+			baloonPrice.text(input.val() * 100 + ' руб');
 		}
 	});
 	$('body').on('click', '#moreColorBtn', function(event) {
@@ -9288,7 +9288,6 @@ jQuery(document).ready(function($) {
 			input.val(parseFloat(input.val()) - 1);
 			numb = input.val();
 			output.text(parseFloat(numb) * 99 +' р');
-			console.log(output)
 		} else {
 			input.val(0);
 			numb = input.val();
@@ -9309,7 +9308,7 @@ jQuery(document).ready(function($) {
 			numb = input.val();
 			output.text(parseFloat(numb) * 99 +' р');
 		} else {
-			input.val(0);
+			input.val(1);
 			numb = input.val();
 			output.text(parseFloat(numb) * 99 +' р');
 		}
@@ -9351,8 +9350,8 @@ jQuery(document).ready(function($) {
 			input.val(parseFloat(input.val()) + 1);
 			baloonPrice.text(input.val() * 50 + ' руб');
 		} else {
-			input.val(0);
-			baloonPrice.text('0 руб');
+			input.val(1);
+			baloonPrice.text(input.val() * 50 + ' руб');
 		}
 	});
 	
@@ -9383,8 +9382,8 @@ jQuery(document).ready(function($) {
 			input.val(parseFloat(input.val()) + 1);
 			baloonPrice.text(input.val() * 99 + ' руб');
 		} else {
-			input.val(0);
-			baloonPrice.text('0 руб');
+			input.val(1);
+			baloonPrice.text(input.val() * 99 + ' руб');
 		}
 	});
 	$('a[href^="#"]').on('click', function(e){

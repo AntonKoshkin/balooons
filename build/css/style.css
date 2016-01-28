@@ -1152,7 +1152,7 @@ a {
 }
 @media (min-width: 1230px) {
   .navigation__a {
-    padding: 0px 23.5px;
+    padding: 0px 23px;
   }
 }
 .aside {
@@ -1225,6 +1225,12 @@ a {
   padding-left: 10px;
   padding-right: 10px;
   box-shadow: 2px 0 0 0 #ccc, 0 2px 0 0 #ccc, 2px 2px 0 0 #ccc, inset 2px 0 0 0 #ccc, inset 0 2px 0 0 #ccc;
+}
+@media (max-width: 797px) {
+  .catalog > .row > div {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 @media (min-width: 798px) {
   .catalog > .row {
@@ -1316,6 +1322,12 @@ a {
 .catalog-item__footer {
   font-size: 14px;
 }
+@media (max-width: 797px) {
+  .catalog-item__footer {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
 .catalog-item__price {
   display: inline-block;
   padding: 4px 0;
@@ -1326,7 +1338,7 @@ a {
   display: inline-block;
   border: none;
   background-color: #ffd02e;
-  padding: 4px 11px;
+  padding: 4px 4px;
   float: right;
 }
 @media (min-width: 798px) {
@@ -1394,7 +1406,8 @@ a {
 .baloon__sum {
   font-size: 24px;
   display: inline-block;
-  width: 110px;
+  min-width: 100px;
+  margin-right: 10px;
   vertical-align: middle;
 }
 .baloon__select {
@@ -1403,6 +1416,7 @@ a {
   padding: 5px 0 5px 5px;
   border: 1px solid #afafaf;
   border-radius: 4px;
+  background-color: #fff;
 }
 .baloon__counter {
   font-size: 16px;
@@ -1485,7 +1499,7 @@ a {
     margin-bottom: 25px;
   }
   .baloon__sum {
-    margin-right: 10px;
+    margin-right: 20px;
   }
   .baloon__counter {
     margin-right: 20px;
@@ -1610,7 +1624,8 @@ a {
 }
 .baloon-also__footer {
   font-size: 14px;
-  margin: 0 30px;
+  display: inline-block;
+  min-width: 150px;
 }
 @media (min-width: 1230px) {
   .baloon-also__footer {
@@ -1619,7 +1634,7 @@ a {
 }
 .baloon-also__price {
   display: inline-block;
-  padding: 4px 0;
+  padding: 4px 5px 4px 0;
   float: left;
 }
 .baloon-also__btn {
